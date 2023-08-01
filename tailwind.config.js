@@ -10,6 +10,7 @@ export default {
         work: ["Work Sans", "sans-serif"],
       },
     },
+
     colors: {
       primary: "#FF6D6D",
       secondary: "#77D7D3",
@@ -19,6 +20,15 @@ export default {
       "gray-200": "#F2F2F2",
       "gray-dark": "#727272",
       white: "#fff",
+    },
+
+    screens: {
+      // Define your custom screen sizes here
+      xs: "480px", // Extra small screens
+      sm: "640px", // Small screens
+      md: "768px", // Medium screens
+      lg: "1024px", // Large screens
+      xl: "1280px", // Extra large screens
     },
   },
   plugins: [],

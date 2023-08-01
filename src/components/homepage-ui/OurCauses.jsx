@@ -4,9 +4,6 @@ import Water from "../../assets/safe_water.png";
 import Rights from "../../assets/human_rights.png";
 import SectionHeading from "../sectionHeading/SectionHeading";
 import Button from "../ui/Button/Button";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import CauseCard from "./CauseCard";
 
 const cardDummyData = [
