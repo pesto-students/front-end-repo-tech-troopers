@@ -38,12 +38,7 @@ const Discover = () => {
           </p>
 
           {item.showButton ? (
-            <Button
-              text='DISCOVER'
-              bgColor='#fff'
-              textColor='#000'
-              borderRadius='34px'
-            />
+            <Button text='DISCOVER' bgColor='#fff' textColor='#000' />
           ) : (
             <a
               className='text-white underline md:no-underline hover:underline font-work text-xs md:text-lg'

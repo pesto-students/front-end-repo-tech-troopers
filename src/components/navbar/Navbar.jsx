@@ -40,7 +40,7 @@ const Navbar = ({ id, title }) => {
   const navigate = useNavigate();
 
   return (
-    <nav className='app_navbar md:mx-2  h-28 bg-white'>
+    <nav className='app_navbar md:mx-2  h-28 bg-white sticky top-0 z-30'>
       {/* Header left */}
       <div className='app__navbar-logo'>
         <img src={Logo} alt='' />

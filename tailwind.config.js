@@ -12,6 +12,7 @@ export default {
       backgroundImage: {
         'hero-pattern': "url('/src/assets/background_home.png')",
         'resource-pattern': "url('/src/assets/resource_background.png')",
+        'message-pattern': "url('/src/assets/message_background.png')",
       },
     },
 
@@ -25,6 +26,7 @@ export default {
       'gray-dark': '#727272',
       'gray-light': '#384356',
       white: '#fff',
+      'gray-lighter': '#384C56',
     },
 
     screens: {
