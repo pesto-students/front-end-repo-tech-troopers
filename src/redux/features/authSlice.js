@@ -1,12 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { signupuser, signinuser } from './authActions';
+import { signupuser, signinuser, addngodetails } from './authActions';
 
 const initialState = {
   loading: false,
   userInfo: {}, // for user object
-  userToken: null, // for storing the JWT
+  userToken: null,
+  isLoggedIn: false, // for storing the JWT
   error: null,
-  success: false, // for monitoring the registration process.
+  success: false,
+  registration: false // for monitoring the registration process.
 };
 
 const userToken = localStorage.getItem('userToken')
@@ -24,11 +26,15 @@ const authSlice = createSlice({
     },
     [signupuser.fulfilled]: (state, { payload }) => {
       state.loading = false;
-      state.success = true; // registration successful
+      state.success = true;
+      state.userInfo = payload.userInfo;
+      state.userToken = payload.token;
+      state.isLoggedIn = true;// registration successful
     },
     [signupuser.rejected]: (state, { payload }) => {
       state.loading = false;
       state.error = payload;
+      state.isLoggedIn = false;
     },
     [signinuser.pending]: (state) => {
       state.loading = true;
@@ -36,13 +42,28 @@ const authSlice = createSlice({
     },
     [signinuser.fulfilled]: (state, { payload }) => {
       state.loading = false;
-      state.userInfo = payload;
-      state.userToken = payload.userToken;
+      state.userInfo = payload.userInfo;
+      state.userToken = payload.token;
+      state.isLoggedIn = true;
     },
     [signinuser.rejected]: (state, { payload }) => {
       state.loading = false;
       state.error = payload;
     },
+    [addngodetails.pending]: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    [addngodetails.fulfilled]: (state, { payload }) => {
+      state.loading = false;
+      state.address = payload.address;
+      state.ngoDetails = payload.ngoDetails;
+      state.registration = true;
+    },
+    [addngodetails.rejected]: (state, { payload }) => {
+      state.loading = false;
+      state.error = payload;
+    }
   },
 });
 

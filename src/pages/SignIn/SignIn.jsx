@@ -65,7 +65,7 @@ const SignIn = () => {
           </CardHeader>
 
           <CardBody align="center">
-            <form onSubmit={onSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <VStack spacing="10rem">
                 <div className="self-stretch relative text-[1.25rem] leading-[130%] font-work text-gray-dark text-center">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do

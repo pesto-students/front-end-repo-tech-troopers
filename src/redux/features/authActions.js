@@ -12,7 +12,7 @@ export const signupuser = createAsyncThunk(
     'auth/signup',
     async ({ name, email, role, password }, { rejectWithValue }) => {
         try {
-            await axiosHelper.post(
+            const data = await axiosHelper.post(
                 '/users',
                 {
                     name,
@@ -23,6 +23,8 @@ export const signupuser = createAsyncThunk(
                 },
                 CONFIG
             );
+            localStorage.setItem('userToken', data.token);
+            return data;
         } catch (error) {
             if (error.response && error.response.data.message) {
                 return rejectWithValue(error.response.data.message);
@@ -37,7 +39,7 @@ export const signinuser = createAsyncThunk(
     'auth/signin',
     async ({ email, password }, { rejectWithValue }) => {
         try {
-            await axiosHelper.post(
+            const data = await axiosHelper.post(
                 '/auth',
                 {
                     email,
@@ -45,7 +47,7 @@ export const signinuser = createAsyncThunk(
                 },
                 CONFIG
             );
-            localStorage.setItem('userToken', data.userToken);
+            localStorage.setItem('userToken', data.token);
             return data;
         } catch (error) {
             if (error.response && error.response.data.message) {
@@ -56,3 +58,25 @@ export const signinuser = createAsyncThunk(
         }
     }
 );
+
+export const addngodetails = createAsyncThunk(
+    'auth/ngoDetails',
+    async ({ address, ngoDetails, userId }, { rejectWithValue }) => {
+        try {
+            const data = await axiosHelper.patch(
+                `/users/${userId}`, {
+                address, ngoDetails
+            },
+                CONFIG
+
+            )
+            return data;
+        } catch (error) {
+            if (error.response && error.response.data.message) {
+                return rejectWithValue(error.response.data.message);
+            } else {
+                return rejectWithValue(error.message);
+            }
+        }
+    }
+)
