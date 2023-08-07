@@ -13,6 +13,7 @@ export default {
         'hero-pattern': "url('/src/assets/background_home.png')",
         'resource-pattern': "url('/src/assets/resource_background.png')",
         'message-pattern': "url('/src/assets/message_background.png')",
+        'donate-pattern': "url('/src/assets/donate_background.png')",
       },
     },
 

@@ -2,8 +2,6 @@ import Button from '../ui/Button/Button';
 import Logo from '../../assets/logo.svg';
 import { useNavigate } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { MdOutlineRestaurantMenu } from 'react-icons/md';
-import './Navbar.css';
 import { useState } from 'react';
 
 const navbarData = [
@@ -39,65 +37,42 @@ const Navbar = ({ id, title }) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const navigate = useNavigate();
 
+  function Menu(e) {
+    let list = document.querySelector('ul');
+
+    e.name === 'menu'
+      ? ((e.name = 'close'),
+        list.classList.add('top-[80px]'),
+        list.classList.add('opacity-100'))
+      : ((e.name = 'menu'),
+        list.classList.remove('top-[80px]'),
+        list.classList.remove('opacity-100'));
+  }
+
   return (
-    <nav className='app_navbar md:mx-2  h-28 bg-white sticky top-0 z-30'>
+    <nav className='p-5 bg-white shadow md:flex md:items-center md:justify-between'>
       {/* Header left */}
-      <div className='app__navbar-logo'>
-        <img src={Logo} alt='' />
+      <div className='flex justify-between items-center'>
+        <span className='text-2xl cursor-pointer'>
+          <img src={Logo} alt='' />
+        </span>
+
+        <span className='text-3xl cursor-pointer mx-2 md:hidden block'>
+          <ion-icon name='menu-outline' onClick='Menu(this)'></ion-icon>
+        </span>
       </div>
 
       {/* Header middle */}
-      <ul className='app__navbar-links  space-x-10 text-dark text-lg'>
+      <ul className='md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto ms:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 text-dark text-lg'>
         {navbarData.map((nav, id) => (
-          <li
-            key={id}
-            className='text-dark font-work text-lg font-medium leading-3 cursor-pointer hover:text-primary'
-          >
-            {nav.title}
+          <li key={id} className='mx-4 my-6 md:my-0'>
+            <a className='text-dark font-work text-lg font-medium leading-3 cursor-pointer hover:text-primary duration-500'>
+              {nav.title}
+            </a>
           </li>
         ))}
-      </ul>
-
-      <div className='app__navbar-login'>
         <Button text='LOG IN' bgColor='#FF6D6D' width='' borderRadius='34' />
-      </div>
-
-      <div className='app__navbar-smallscreen'>
-        <GiHamburgerMenu
-          color='#000'
-          fontSize={22}
-          onClick={() => setToggleMenu(true)}
-        />
-
-        {toggleMenu && (
-          <div className='app__navbar-smallscreen_overlay'>
-            <MdOutlineRestaurantMenu
-              fontSize={27}
-              className='overlay__close'
-              onClick={() => setToggleMenu(false)}
-            />
-            <ul className='app__navbar-links space-x-10 text-dark text-lg'>
-              {navbarData.map((nav, id) => (
-                <li
-                  key={id}
-                  className='text-dark font-work text-lg font-medium leading-3 cursor-pointer hover:text-primary'
-                >
-                  {nav.title}
-                </li>
-              ))}
-            </ul>
-
-            <div className='app__navbar_login_mobile'>
-              <Button
-                text='LOG IN'
-                bgColor='#FF6D6D'
-                width='20'
-                borderRadius=''
-              />
-            </div>
-          </div>
-        )}
-      </div>
+      </ul>
     </nav>
   );
 };
