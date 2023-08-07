@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -16,7 +17,6 @@ export default {
         'donate-pattern': "url('/src/assets/donate_background.png')",
       },
     },
-
     colors: {
       primary: '#FF6D6D',
       secondary: '#77D7D3',
@@ -29,7 +29,6 @@ export default {
       white: '#fff',
       'gray-lighter': '#384C56',
     },
-
     screens: {
       // Define your custom screen sizes here
       xs: '480px', // Extra small screens

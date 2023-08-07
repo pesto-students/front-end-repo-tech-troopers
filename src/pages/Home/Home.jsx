@@ -14,7 +14,7 @@ import Message from '../../components/homepage-ui/Message';
 
 const Home = () => {
   return (
-    <div className='scrollbar-hide'>
+    <div className="scrollbar-hide">
       {/* Yet to make it responsive */}
       <Navbar />
       {/* Done */}

@@ -1,0 +1,32 @@
+/* Default styles */
+.background-image {
+  background-image: url('https://res.cloudinary.com/dtbt6but5/image/upload/v1690648286/Brighter%20Days/Background_kgjim9.png');
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
+.white-background {
+  background-color: #2e4049;
+  height: 100vh;
+}
+
+/* Media query for screens larger than 500px */
+@media (min-width: 501px) {
+  .background-image {
+    display: block;
+  }
+  .white-background {
+    display: none;
+  }
+}
+
+/* Media query for screens equal to or smaller than 500px */
+@media (max-width: 500px) {
+  .background-image {
+    display: none;
+  }
+  .white-background {
+    display: block;
+  }
+}

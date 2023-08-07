@@ -1,43 +1,43 @@
-import School from "../../assets/build_school.png";
-import Aid from "../../assets/medical_aid.png";
-import Water from "../../assets/safe_water.png";
-import Rights from "../../assets/human_rights.png";
-import SectionHeading from "../sectionHeading/SectionHeading";
-import Button from "../ui/Button/Button";
-import CauseCard from "./CauseCard";
+import School from '../../assets/build_school.png';
+import Aid from '../../assets/medical_aid.png';
+import Water from '../../assets/safe_water.png';
+import Rights from '../../assets/human_rights.png';
+import SectionHeading from '../sectionHeading/SectionHeading';
+import Button from '../ui/Button/Button';
+import CauseCard from './CauseCard';
 
 const cardDummyData = [
   {
     id: 1,
     image: School,
-    cardTitle: "Big charity: build school for poor children",
-    raisedAmt: "5M",
-    goalAmt: "10M",
-    percentRaised: "50",
+    cardTitle: 'Big charity: build school for poor children',
+    raisedAmt: '5M',
+    goalAmt: '10M',
+    percentRaised: '50',
   },
   {
     id: 2,
     image: Aid,
-    cardTitle: "Big charity: build school for poor children",
-    raisedAmt: "5M",
-    goalAmt: "10M",
-    percentRaised: "50",
+    cardTitle: 'Big charity: build school for poor children',
+    raisedAmt: '5M',
+    goalAmt: '10M',
+    percentRaised: '50',
   },
   {
     id: 3,
     image: Water,
-    cardTitle: "Big charity: build school for poor children",
-    raisedAmt: "5M",
-    goalAmt: "10M",
-    percentRaised: "50",
+    cardTitle: 'Big charity: build school for poor children',
+    raisedAmt: '5M',
+    goalAmt: '10M',
+    percentRaised: '50',
   },
   {
     id: 4,
     image: Water,
-    cardTitle: "Big charity: build school for poor children",
-    raisedAmt: "5M",
-    goalAmt: "10M",
-    percentRaised: "50",
+    cardTitle: 'Big charity: build school for poor children',
+    raisedAmt: '5M',
+    goalAmt: '10M',
+    percentRaised: '50',
   },
 ];
 
