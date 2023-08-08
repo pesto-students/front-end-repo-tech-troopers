@@ -55,7 +55,6 @@ const SignUp = () => {
     handleSubmit,
     register,
   } = useForm({
-    mode: 'onBlur',
     resolver: yupResolver(schema),
   });
 
@@ -105,7 +104,7 @@ const SignUp = () => {
             </CardBody>
             <div
               className="relative leading-[130%] inline-block w-[20rem] cursor-pointer font-ellen text-[2rem]"
-              onClick={() => {}}
+              onClick={() => { }}
             >
               <span>Already have an account?</span>
               <span className="text-primary">

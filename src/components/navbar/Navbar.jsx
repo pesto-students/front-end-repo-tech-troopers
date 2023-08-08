@@ -1,9 +1,13 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Button from '../ui/Button/Button';
 import logoIcon from '../../assets/icon_brighterdays.svg';
 import menu from '../../assets/hamburger-black.svg';
 import close from '../../assets/close-black.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaRegUserCircle } from 'react-icons/fa';
+import { ChevronUpIcon } from '@chakra-ui/icons';
+import { IconButton, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
 
 const navbarData = [
   {
@@ -31,10 +35,21 @@ const navbarData = [
     title: 'Volunteer',
     path: '/volunteer',
   },
+  {
+    id: 6,
+    title: 'Donate Resources',
+    path: '/resources',
+  },
 ];
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
+
+  const navigate = useNavigate();
+  const { isLoggedIn } = useSelector(
+    (state) => state.auth
+  );
 
   return (
     <nav className="w-full flex items-center py-5 fixed top-0 z-20 bg-white shadow-md h-20">
@@ -59,19 +74,56 @@ const Navbar = () => {
             <li
               key={link.id}
               className="text-dark hover:text-primary text-lg font-medium cursor-pointer"
-              // onClick={() => setActive(link.title)}
+            // onClick={() => setActive(link.title)}
             >
               <Link to={link.path}>{link.title}</Link>
             </li>
           ))}
         </ul>
 
-        <div className="hidden md:block">
-          <Button text="LOGIN" bgColor="#FF6D6D" />
-        </div>
+        {isLoggedIn ? (
+          <>
+            <IconButton
+              icon={<FaRegUserCircle className="text-primary text-xl sm:text-2xl md:text-3xl lg:text-4xl" />}
+              variant="ghost"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            />
+            <Menu>
+              <MenuButton
+                as={IconButton}
+                icon={<ChevronUpIcon
+                  boxSize="4"
+                  transform="rotate(180deg)"
+                  color="primary"
+                  className="text-primary"
+                  aria-label="Inverted Triangle"
+                />}
+                variant="ghost"
+                size={{ base: 'md', sm: 'lg', md: 'xl', lg: '2xl', xl: '3xl' }}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              />
+              {/* Dropdown */}
+              <MenuList
+                position="absolute"
+                top="100%" // Position it right below the icon
+                right="0" // Align it with the left side of the icon
+                zIndex="10"
+                bg="white"
+                boxShadow="md"
+              >
+                {/* Logout option */}
+                <MenuItem>Logout</MenuItem>
+              </MenuList>
+            </Menu>
+          </>
+        ) : (
+          <div className="hidden md:block">
+            <Button text="LOGIN" bgColor="#FF6D6D" onClick={() => { navigate('/signin') }} />
+          </div>
+        )}
 
         <div className="sm:hidden flex flex-1 justify-end items-center pr-7">
-          <Button text="LOGIN" bgColor="#FF6D6D" />
+          <Button text="LOGIN" bgColor="#FF6D6D" onClick={() => { navigate('/signin') }} />
           <img
             src={toggle ? close : menu}
             alt="menu"
@@ -79,9 +131,8 @@ const Navbar = () => {
             onClick={() => setToggle(!toggle)}
           />
           <div
-            className={`${
-              !toggle ? 'hidden' : 'flex'
-            } p-6 bg-gray-50 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            className={`${!toggle ? 'hidden' : 'flex'
+              } p-6 bg-gray-50 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <ul className="list-none flex justify-end items-start flex-col gap-4">
               {navbarData.map((link) => (
