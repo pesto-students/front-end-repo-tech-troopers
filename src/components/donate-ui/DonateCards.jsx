@@ -2,9 +2,7 @@ import School from '../../assets/build_school.png';
 import Aid from '../../assets/medical_aid.png';
 import Water from '../../assets/safe_water.png';
 import Rights from '../../assets/human_rights.png';
-import SectionHeading from '../sectionHeading/SectionHeading';
-import Button from '../ui/Button/Button';
-import CauseCard from './CauseCard';
+import DonateCard from './DonateCard';
 
 const cardDummyData = [
   {
@@ -39,24 +37,30 @@ const cardDummyData = [
     goalAmt: '10M',
     percentRaised: '50',
   },
+  {
+    id: 5,
+    image: Water,
+    cardTitle: 'Big charity: build school for poor children',
+    raisedAmt: '5M',
+    goalAmt: '10M',
+    percentRaised: '50',
+  },
+  {
+    id: 6,
+    image: Water,
+    cardTitle: 'Big charity: build school for poor children',
+    raisedAmt: '5M',
+    goalAmt: '10M',
+    percentRaised: '50',
+  },
 ];
 
 function OurCauses() {
   return (
-    <section className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex items-center justify-between mb-4">
-        <SectionHeading
-          heading="Our Causes"
-          title="You can help lots of people by donating little."
-        />
-        <Button text="MORE CAUSES" bgColor="primary" onClick={() => {}} />
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+    <section className="p-10 w-full bg-gray-50">
+      <div className="flex items-center flex-wrap justify-around space-y-5">
         {cardDummyData.map((card) => (
-          <div key={card.id} className="flex">
-            <CauseCard {...card} key={card.id} />
-          </div>
+          <DonateCard {...card} key={card.id} />
         ))}
       </div>
     </section>

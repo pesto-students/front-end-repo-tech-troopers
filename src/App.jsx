@@ -1,8 +1,9 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import SignIn from "./pages/SignIn/SignIn";
-import SignUp from "./pages/Signup/SignUp";
-import Home from "./pages/Home/Home";
-import Registration from "./pages/Registration/Registration";
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import SignIn from './pages/SignIn/SignIn';
+import SignUp from './pages/Signup/SignUp';
+import Home from './pages/Home/Home';
+import Donate from './pages/Donate/Donate';
+import Registration from './pages/Registration/Registration';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/" element={<Home />} />
-
+          <Route path="/donate" element={<Donate />} />
         </Routes>
       </BrowserRouter>
     </div>

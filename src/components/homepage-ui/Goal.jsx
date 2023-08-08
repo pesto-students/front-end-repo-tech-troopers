@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
 const Goal = ({ image, cardTitle }) => {
   return (
-    <div className="flex items-center gap-3">
-      <img src={image} alt="" className="h-6 w-6" />
-      <h3 className="font-work font-medium leading-10 text-xl text-gray-dark">
+    <div className="flex items-start space-x-3">
+      <img src={image} alt="" className="h-4 w-4 md:h-6 md:w-6" />
+      <p className="font-work font-medium whitespace-nowrap text-md md:text-xl text-gray-dark">
         {cardTitle}
-      </h3>
+      </p>
     </div>
   );
 };
