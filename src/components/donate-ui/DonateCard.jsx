@@ -9,21 +9,21 @@ const DonateCard = ({
   percentRaised,
 }) => {
   return (
-    <div className='w-[100%]  sm:w-[437px] font-shippori space-y-5 shadow-xl pb-3'>
-      <img
-        src={image}
-        alt={cardTitle}
-        className='h-[260px] sm:h-[360px] object-cover w-full'
-      />
+    <div className="shadow-lg">
+      <div className="w-[400px] h-[350px]">
+        <img src={image} className="object-contain" alt="" />
+      </div>
 
-      <div className='flex flex-col space-y-3 mx-6'>
-        <h3 className='font-bold text-xl sm:text-2xl text-dark'>{cardTitle}</h3>
+      <div className="bg-white p-4 space-y-4">
+        <h5 className="text-dark font-bold font-shippori text-2xl max-w-xs">
+          {cardTitle}
+        </h5>
 
-        <div className='flex items-center justify-between'>
-          <p className='bg-[#E8E8E8] py-5 px-8 rounded-3xl '>
-            Donation: Rs 5,000/12,000
+        <div className="flex items-center justify-between">
+          <p className="font-bold text-dark text-xl p-4 rounded-full bg-gray-100 font-shippori">
+            Donation: {raisedAmt}/{goalAmt}
           </p>
-          <Button text='DISCOVER' bgColor='#2E4049' textColor='#000' />
+          <Button bgColor="#2E4049" text="DONATE" />
         </div>
       </div>
     </div>

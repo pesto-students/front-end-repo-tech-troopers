@@ -57,12 +57,10 @@ const cardDummyData = [
 
 function OurCauses() {
   return (
-    <section className='container mx-auto px-4 sm:px-6 lg:px-8'>
-      <div className='grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-10'>
+    <section className="p-10 w-full bg-gray-50">
+      <div className="flex items-center flex-wrap justify-around space-y-5">
         {cardDummyData.map((card) => (
-          <div className='flex'>
-            <DonateCard {...card} key={card.id} />
-          </div>
+          <DonateCard {...card} key={card.id} />
         ))}
       </div>
     </section>
