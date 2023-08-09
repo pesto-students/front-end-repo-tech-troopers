@@ -4,7 +4,7 @@ const axiosInstance = axios.create({
     baseURL: 'http://localhost:8000/api', // Replace this with your API base URL
     timeout: 10000, // Set a timeout (in milliseconds) for the request
     headers: {
-        'Content-Type': 'application/json', // Set the default content type for requests
+        'x-auth-token': `${localStorage.getItem('userToken')}`, // Set the default content type for requests
     },
 });
 

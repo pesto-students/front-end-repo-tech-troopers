@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { fetchresourcesadmins, fetchresourcesuser } from './resourcesAction';
 
 const initialState = {
     resources: [],
@@ -21,6 +22,20 @@ const resourcesSlice = createSlice({
         fetchResourcesFailure(state, action) {
             state.loading = false;
             state.error = action.payload;
+        },
+    },
+    extraReducers: {
+        [fetchresourcesadmins.pending]: (state) => {
+            state.loading = true;
+            state.error = null;
+        },
+        [fetchresourcesadmins.fulfilled]: (state, { payload }) => {
+            state.loading = false;
+            state.resources = payload.resourceList;// registration successful
+        },
+        [fetchresourcesadmins.rejected]: (state, { payload }) => {
+            state.loading = false;
+            state.error = payload;
         },
     }
 });
