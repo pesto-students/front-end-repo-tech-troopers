@@ -9,21 +9,16 @@ const CONFIG = {
 };
 
 export const fetchresourcesuser = createAsyncThunk(
-    'resources/user',
-    async ({ name, email, role, password }, { rejectWithValue }) => {
+    `resources/`,
+    async ({ userId }, { rejectWithValue }) => {
         try {
-            const data = await axiosHelper.post(
-                '/users',
+            const data = await axiosHelper.get(
+                `/resource/${userId}`,
                 {
-                    name,
-                    email,
-                    password,
-                    role,
 
                 },
                 CONFIG
             );
-            localStorage.setItem('userToken', data.token);
             return data;
         } catch (error) {
             if (error.response && error.response.data.message) {

@@ -11,6 +11,10 @@ const resourcesSlice = createSlice({
     name: 'resources',
     initialState,
     reducers: {
+        deleteResource(state, action) {
+            const resourceId = action.payload;
+            state.resources = state.resources.filter(resource => resource.resourceId !== resourceId);
+        },
         fetchResourcesStart(state) {
             state.loading = true;
             state.error = null;
@@ -43,7 +47,8 @@ const resourcesSlice = createSlice({
 export const {
 
     fetchResourcesSuccess,
-    fetchResourcesStart
+    fetchResourcesStart,
+    deleteResource
 } = resourcesSlice.actions;
 
 export default resourcesSlice.reducer;
