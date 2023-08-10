@@ -1,9 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../ui/Button/Button';
 
-const EventCard = ({ image, cardTitle, cardDesc }) => {
+const EventCard = ({ image, id, cardTitle, cardDesc }) => {
+  const navigate = useNavigate();
+
+  const handleEventClick = () => {
+    navigate(`${id}`);
+  };
+
   return (
-    <div className="shadow-lg relative">
+    <div
+      className="shadow-lg cursor-pointer relative"
+      onClick={handleEventClick}
+    >
       <div className="w-[500px] h-[300px] ">
         <img src={image} className="object-cover" alt="" />
         <h3 className="absolute w-[116px] top-0 left-0 bg-primary text-white font-shippori text-center text-5xl px-4 py-5 z-10">

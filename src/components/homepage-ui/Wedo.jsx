@@ -48,7 +48,7 @@ const wedoCardData = [
 
 const Wedo = () => {
   return (
-    <section className="px-4 py-8 sm:px-8 md:px-12 lg:px-24 xl:px-32">
+    <section className="px-4 py-8  sm:px-8 md:px-16 lg:px-24 xl:px-32">
       {/* Top section */}
       <div className="text-center">
         <SectionHeading
