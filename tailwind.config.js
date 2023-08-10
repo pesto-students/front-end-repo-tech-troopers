@@ -15,6 +15,12 @@ export default {
         'resource-pattern': "url('/src/assets/resource_background.png')",
         'message-pattern': "url('/src/assets/message_background.png')",
         'donate-pattern': "url('/src/assets/donate_background.png')",
+        'events-pattern': "url('/src/assets/background_events.png')",
+        'about-pattern': "url('/src/assets/aboutus_background.png')",
+        'donatesingle-pattern': "url('/src/assets/donate_single.png')",
+        'volunteer-pattern': "url('/src/assets/volunteer_background.png')",
+        'volunteersingle-pattern':
+          "url('/src/assets/volunteersingle_background.png')",
       },
     },
     colors: {
