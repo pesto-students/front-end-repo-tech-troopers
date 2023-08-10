@@ -1,17 +1,17 @@
 import Navbar from '../../components/navbar/Navbar';
 import Banner from '../../components/events-ui/Banner';
-import EventCards from '../../components/events-ui/EventCards';
+import SingleEventCard from '../../components/events-ui/SingleEventCard';
 import Footer from '../../components/commons/Footer';
 
-const Events = () => {
+const EventsSingle = () => {
   return (
     <div>
       <Navbar />
       <Banner />
-      <EventCards />
+      <SingleEventCard />
       <Footer />
     </div>
   );
 };
 
-export default Events;
+export default EventsSingle;
