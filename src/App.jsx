@@ -10,6 +10,7 @@ import DonateSingle from './pages/Donate/DonateSingle';
 import VolunteerSingle from './pages/Volunteer/VolunteerSingle';
 import Volunteer from './pages/Volunteer/Volunteer';
 import Registration from './pages/Registration/Registration';
+import Resources from './pages/Resources/Resources';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/resources" element={<Resources />} />
           <Route path="/ngodetails" element={<Registration />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
