@@ -1,10 +1,16 @@
 import Button from '../ui/Button/Button';
+import { EnvelopeIcon } from '@heroicons/react/24/solid';
+import { PhoneIcon } from '@heroicons/react/24/solid';
+import Instagram from '../../assets/insta_grey.svg';
+import Facebook from '../../assets/facebook_grey.svg';
+import Twitter from '../../assets/twitter_grey.svg';
+import Pintrest from '../../assets/pintrest_grey.svg';
 
 const Newsletter = () => {
   return (
-    <div className="bg-message-pattern flex items-center justify-around pb-4 md:pt-16  bg-primary relative w-screen h-full  md:h-[70vh]  bg-no-repeat sm:bg-cover md:bg-cover bg-contain">
+    <div className="bg-message-pattern flex items-center justify-around pb-4 md:pt-16  bg-primary relative w-screen h-full  md:h-[65vh]  bg-no-repeat sm:bg-cover md:bg-cover bg-contain">
       <div className="flex flex-col w-[500px] space-y-1 md:space-y-4 items-center justify-center">
-        <h5 className="text-white font-ellen text-lg md:text-3xl font-normal leading-9">
+        <h5 className="text-dark font-shippori text-4xl font-extrabold">
           Get in Touch With Us
         </h5>
         <p className="font-work text-white font-normal  leading-6 text-sm md:text-xl">
@@ -14,26 +20,55 @@ const Newsletter = () => {
           us."
         </p>
 
-        <div>
-          <div>
-            {/* Icon */}
+        <div className="flex flex-col py-4 space-y-6 ">
+          {/* Icon */}
+          <div className="flex space-x-5">
+            <EnvelopeIcon class="h-16 w-16  text-primary bg-white rounded-full px-2 py-2" />
+            <div className="flex space-y-1 flex-col">
+              {/* message */}
+              <h3 className="text-dark font-shippori text-2xl font-extrabold">
+                Email
+              </h3>
 
-            {/* message */}
-
-            {/* contact */}
+              {/* contact */}
+              <span className="font-work text-white font-normal  leading-6 text-sm md:text-lg">
+                pesto@health.com
+              </span>
+            </div>
           </div>
 
-          <div>
-            {/* Icon */}
+          <div className="flex space-x-5">
+            <PhoneIcon class="h-16 w-16  text-primary bg-white rounded-full px-2 py-2" />
+            <div className="flex space-y-1 flex-col">
+              {/* message */}
+              <h3 className="text-dark font-shippori text-2xl font-extrabold">
+                Contact Us
+              </h3>
 
-            {/* message */}
-
-            {/* contact */}
+              {/* contact */}
+              <span className="font-work text-white font-normal  leading-6 text-sm md:text-lg">
+                222 888 0000
+              </span>
+            </div>
           </div>
         </div>
 
         {/* Follow us on social media */}
-        <div></div>
+        <div className="px-20 py-4">
+          <h2 className="text-dark font-shippori text-2xl font-extrabold">
+            Follow us on Social Media
+          </h2>
+          <p className="font-work text-white font-normal  leading-6 text-sm md:text-lg">
+            Care about people to transforming their lives and exudes a
+            positives.
+          </p>
+          <div className="flex items-center cursor-pointer justify-around md:pt-5">
+            <img src={Instagram} alt="" />
+            <img src={Facebook} alt="" />
+            <img src={Twitter} alt="" />
+            <img src={Pintrest} alt="" />
+          </div>
+        </div>
       </div>
 
       {/* section right */}
