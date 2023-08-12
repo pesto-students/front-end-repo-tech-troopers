@@ -1,6 +1,7 @@
 import SectionHeading from '../sectionHeading/SectionHeading';
 import Button from '../ui/Button/Button';
 import Goals from './Goals';
+import { Link } from 'react-router-dom';
 
 const Aboutus = () => {
   return (
@@ -27,7 +28,9 @@ const Aboutus = () => {
             galley of type and scrambled it to make a type specimen book.
             essentially.
           </p>
-          <Button text="MORE ABOUT" bgColor="#FF6D6D" />
+          <Link to="/aboutus">
+            <Button text="MORE ABOUT" bgColor="#FF6D6D" />
+          </Link>
         </div>
       </div>
 

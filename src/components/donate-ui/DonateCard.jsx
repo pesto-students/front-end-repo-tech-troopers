@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../ui/Button/Button';
 
 const DonateCard = ({
+  id,
   image,
   cardTitle,
   raisedAmt,
@@ -23,7 +25,9 @@ const DonateCard = ({
           <p className="font-bold text-dark text-xl p-4 rounded-full bg-gray-100 font-shippori">
             Donation: {raisedAmt}/{goalAmt}
           </p>
-          <Button bgColor="#2E4049" text="DONATE" />
+          <Link to={`/donate/${id}`}>
+            <Button bgColor="#2E4049" text="DONATE" />
+          </Link>
         </div>
       </div>
     </div>
