@@ -43,7 +43,7 @@ const cardDummyData = [
 
 function OurCauses() {
   return (
-    <section className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="container m-4 md:mt-36 mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between mb-4">
         <SectionHeading
           heading="Our Causes"
