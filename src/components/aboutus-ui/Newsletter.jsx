@@ -8,8 +8,8 @@ import Pintrest from '../../assets/pintrest_grey.svg';
 
 const Newsletter = () => {
   return (
-    <div className="bg-message-pattern flex items-center justify-around pb-4 md:pt-16  bg-primary relative w-screen h-full  md:h-[65vh]  bg-no-repeat sm:bg-cover md:bg-cover bg-contain">
-      <div className="flex flex-col w-[500px] space-y-1 md:space-y-4 items-center justify-center">
+    <div className="bg-message-pattern flex items-center justify-around pb-4 md:pt-16  bg-primary relative w-screen h-full  md:h-[85vh]  bg-no-repeat sm:bg-cover md:bg-cover bg-contain">
+      <div className="flex flex-col w-[500px] space-y-1 md:space-y-4 items-start justify-center">
         <h5 className="text-dark font-shippori text-4xl font-extrabold">
           Get in Touch With Us
         </h5>
@@ -54,7 +54,7 @@ const Newsletter = () => {
         </div>
 
         {/* Follow us on social media */}
-        <div className="px-20 py-4">
+        <div className="py-4">
           <h2 className="text-dark font-shippori text-2xl font-extrabold">
             Follow us on Social Media
           </h2>
@@ -62,7 +62,7 @@ const Newsletter = () => {
             Care about people to transforming their lives and exudes a
             positives.
           </p>
-          <div className="flex items-center cursor-pointer justify-around md:pt-5">
+          <div className="flex items-center cursor-pointer space-x-5 md:pt-5">
             <img src={Instagram} alt="" />
             <img src={Facebook} alt="" />
             <img src={Twitter} alt="" />
@@ -72,7 +72,7 @@ const Newsletter = () => {
       </div>
 
       {/* section right */}
-      <form className="flex w-[600px] bg-white pt-5 border md:pt-10 flex-col items-center space-y-5">
+      <form className="flex w-[600px] bg-white pt-5 border md:py-10 flex-col items-center space-y-5">
         <input
           type="name"
           placeholder="Enter your Name"
