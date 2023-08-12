@@ -30,7 +30,7 @@ const helpDummyData = [
 
 const Help = () => {
   return (
-    <section className="flex items-center bg-[#F1EEEC] pt-28 pb-28 justify-center mx-auto">
+    <section className="flex items-center bg-[#F1EEEC] py-28 justify-center px-24">
       {/* LEFT */}
       <div className="w-[900px]">
         <SectionHeading
