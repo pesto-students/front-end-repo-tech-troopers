@@ -28,7 +28,11 @@ const helpDummyData = [
   },
 ];
 
-const Help = () => {
+const Help = ({ volunteers, handleToggleInterest, buttonText }) => {
+  const handleClick = () => {
+    handleToggleInterest();
+  }
+
   return (
     <section className="flex items-center bg-[#F1EEEC] pt-28 pb-28 justify-center mx-auto">
       {/* LEFT */}
@@ -62,47 +66,25 @@ const Help = () => {
             </div>
           </div>
         ))}
-        <div className="pt-10">
-          <Button text="GET STARTED" textColor="#000" bgColor="#fff" />
-        </div>
       </div>
 
       {/* section right */}
       <div className="border text-center bg-white pb-6 pt-11">
-        <h3 className="text-dark font-shippori text-3xl font-extrabold">
-          Complete the Form
-        </h3>
-        <h4 className="text-primary pt-4 font-work text-xl font-normal">
+        <h2 className="text-primary pt-4 font-work text-xl font-normal">
           Become a volunteer with us today!
-        </h4>
-        <form className="flex w-[600px] bg-white pt-5 md:pt-10 flex-col items-center space-y-5">
-          <input
-            type="name"
-            placeholder="Enter your Name"
-            className="w-3/4 md:w-96 h-10 md:h-16 bg-gray-100  px-4 outline-none"
-          />
-          <input
-            type="number"
-            placeholder="Phone Number"
-            className="w-3/4 md:w-96 h-10 md:h-16 bg-gray-100  px-4 outline-none"
-          />
-
-          <input
-            type="email"
-            placeholder="Enter your Email"
-            className="w-3/4 md:w-96 h-10 md:h-16 bg-gray-100  px-4 outline-none"
-          />
-          <input
-            type="text"
-            placeholder="Address*"
-            className="w-3/4 md:w-96 h-10 md:h-16 bg-gray-100  px-4 outline-none"
-          />
-          <textarea
-            className="w-3/4 md:w-96 h-24 md:h-32 bg-gray-100  px-4 outline-none p-4"
-            placeholder="About occupation"
-          />
-          <Button text="SUBMIT" bgColor="#2E4049" />
-        </form>
+        </h2>
+        <div className="flex w-[600px] bg-white pt-5 md:pt-10 flex-col items-center space-y-5">
+          <h2 className="text-dark font-shippori text-xl  ">
+            <span className="text-primary"> Title: </span> {volunteers && volunteers.title}
+          </h2>
+          <h2 className="text-dark font-shippori text-xl ">
+            <span className="text-primary"> Category: </span> {volunteers && volunteers.category}
+          </h2>
+          <h2 className="text-dark font-shippori text-xl ">
+            <span className="text-primary "> Description: </span>{volunteers && volunteers.description}
+          </h2>
+          <Button text={buttonText} bgColor="#2E4049" onClick={handleClick} />
+        </div>
       </div>
     </section>
   );

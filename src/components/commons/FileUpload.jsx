@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Button } from '@chakra-ui/react';
 import axiosHelper from '../../axiosHelper';
+import LoadingOverlay from '../../components/loader/Loader';
 
-const FileUploadButton = () => {
+
+const FileUploadButton = ({ returnImage }) => {
+    const [loading, isLoading] = useState(false);
     const [imageId, setImageId] = useState(null);
     const [isAlertOpen, setAlertOpen] = useState(false);
 
 
+
     const handleFileChange = async (event) => {
+        isLoading(true);
 
         const file = event.target.files[0];
 
@@ -40,7 +45,8 @@ const FileUploadButton = () => {
                 }
 
             );
-            console.log(data);
+            isLoading(false);
+            returnImage(data.url);
             // alert('Image uploaded successfully.');
         } catch (error) {
             // alert('Error uploading image.');
@@ -50,6 +56,8 @@ const FileUploadButton = () => {
 
     return (
         <>
+            <LoadingOverlay isLoading={loading}></LoadingOverlay>
+
             {/* Hidden file input to trigger file selection */}
             <input
                 type="file"

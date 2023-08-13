@@ -24,6 +24,12 @@ const SignUpForm = ({ onSubmitStep1, errors, register, isSubmitting }) => {
                     {errors.email?.message}
                 </FormErrorMessage>
             </FormControl>
+            <FormControl id="phoneNumber" isInvalid={!!errors.phoneNumber} className='flex flex-col justify-center items-center mb-8 '>
+                <Input placeholder='Phone number' type="tel" h="4rem" w={["full", "full", "50%"]} size='sm' style={{ backgroundColor: 'white' }} autoFocus={true} {...register("phoneNumber")} />
+                <FormErrorMessage >
+                    {errors.phoneNumber?.message}
+                </FormErrorMessage>
+            </FormControl>
             <FormControl id="role" isInvalid={!!errors.role} className='flex flex-col justify-center items-center mb-8 '>
 
                 <Select

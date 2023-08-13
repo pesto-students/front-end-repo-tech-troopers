@@ -1,5 +1,4 @@
 import axiosHelper from '../../axiosHelper';
-
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const CONFIG = {
@@ -8,14 +7,16 @@ const CONFIG = {
     },
 };
 
-export const fetchresourcesuser = createAsyncThunk(
-    `resources/`,
-    async ({ userId }, { rejectWithValue }) => {
+export const fetchvolunteersuser = createAsyncThunk(
+    'volunteers/fetchvolunteersuser', // Provide a unique action name
+    async (_, { rejectWithValue }) => { // You're not using the first parameter, so use "_"
         try {
-            const data = await axiosHelper.get(
-                `/resource/${userId}`,
-                {
+            // Modify queryParams if needed
 
+            const data = await axiosHelper.get(
+                '/voluntary',
+                {
+                    // You can add request options here
                 },
                 CONFIG
             );
@@ -30,23 +31,16 @@ export const fetchresourcesuser = createAsyncThunk(
     }
 );
 
-export const fetchresourcesadmins = createAsyncThunk(
-    'resources/fetchResources',
-    async ({ city, search, filter }, { rejectWithValue }) => {
+export const fetchvolunteersadmins = createAsyncThunk(
+    'volunteers/fetchvolunteersadmins',
+    async ({ userId }, { rejectWithValue }) => {
         try {
             const queryParams = {};
-            if (city) {
-                queryParams.city = city;
-            }
-            if (search) {
-                queryParams.search = search;
-            }
-            if (filter) {
-                queryParams.filter = filter;
-            }
+            queryParams.userId = userId;
+
 
             const data = await axiosHelper.get(
-                '/resource',
+                '/voluntary/admin',
                 {
                     params: queryParams,
                 },
@@ -57,6 +51,7 @@ export const fetchresourcesadmins = createAsyncThunk(
             return rejectWithValue(error.response.data);
         }
     }
+
 );
 
 

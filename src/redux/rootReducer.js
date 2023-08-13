@@ -9,7 +9,7 @@ import authSlice from './features/authSlice';
 const rootReducer = combineReducers({
     user: userReducer,
     resources: resourceReducer,
-    volunteer: volunteerReducer,
+    volunteers: volunteerReducer,
     ngoList: ngoReducer,
     donation: donateReducer,
     auth: authSlice

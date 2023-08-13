@@ -7,7 +7,7 @@ import close from '../../assets/close-black.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { ChevronUpIcon } from '@chakra-ui/icons';
-import { IconButton, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
+import { IconButton, Menu, MenuButton, MenuList, MenuItem, Box } from '@chakra-ui/react';
 
 const navbarData = [
   {
@@ -51,6 +51,11 @@ const Navbar = () => {
     (state) => state.auth
   );
 
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate('/');
+    window.location.reload()
+  };
   return (
     <nav className="w-full flex items-center py-5 fixed top-0 z-20 bg-white shadow-md h-20">
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -83,38 +88,44 @@ const Navbar = () => {
 
         {isLoggedIn ? (
           <>
-            <IconButton
-              icon={<FaRegUserCircle className="text-primary text-xl sm:text-2xl md:text-3xl lg:text-4xl" />}
-              variant="ghost"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            />
-            <Menu>
-              <MenuButton
-                as={IconButton}
-                icon={<ChevronUpIcon
-                  boxSize="4"
-                  transform="rotate(180deg)"
-                  color="primary"
-                  className="text-primary"
-                  aria-label="Inverted Triangle"
-                />}
+            <Box position="relative">
+              <IconButton
+                icon={<FaRegUserCircle className="text-primary text-xl sm:text-2xl md:text-3xl lg:text-4xl" />}
                 variant="ghost"
-                size={{ base: 'md', sm: 'lg', md: 'xl', lg: '2xl', xl: '3xl' }}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               />
-              {/* Dropdown */}
-              <MenuList
-                position="absolute"
-                top="100%" // Position it right below the icon
-                right="0" // Align it with the left side of the icon
-                zIndex="10"
-                bg="white"
-                boxShadow="md"
-              >
-                {/* Logout option */}
-                <MenuItem>Logout</MenuItem>
-              </MenuList>
-            </Menu>
+              <Menu>
+                <MenuButton
+                  as={IconButton}
+                  icon={
+                    <ChevronUpIcon
+                      transform="rotate(180deg)"
+                      color="primary"
+                      className="text-primary"
+                      aria-label="Inverted Triangle"
+                    />
+                  }
+                  variant="ghost"
+                  size={{ base: 'md', sm: 'lg', md: 'xl', lg: '2xl', xl: '3xl' }}
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  position="absolute"
+                  top="10px"
+                // Adjust the right positioning as needed
+                />
+                {/* Dropdown */}
+                <MenuList
+                  position="absolute"
+                  top="100%" // Position it right below the icon
+                  left="0" // Align it with the right side of the icon
+                  zIndex="10"
+                  bg="white"
+                  boxShadow="md"
+                >
+                  {/* Logout option */}
+                  <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                </MenuList>
+              </Menu>
+            </Box>
           </>
         ) : (
           <div className="hidden md:block">

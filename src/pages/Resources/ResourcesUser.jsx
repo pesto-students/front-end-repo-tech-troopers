@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Box, Flex, Text, Image, Button } from '@chakra-ui/react';
+import { Box, Flex, Text, Image } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import Navbar from "../../components/navbar/Navbar";
 import Wedo from "../../components/homepage-ui/Wedo";
@@ -9,9 +9,11 @@ import Goals from "../../components/homepage-ui/Goals";
 import { fetchresourcesuser } from '../../redux/features/resourcesAction';
 import { deleteResource } from '../../redux/features/resourcesSlice';
 import axiosHelper from '../../axiosHelper';
+import Button from '../../components/ui/Button/Button';
 
 
 const ResourcesUser = ({ sendDataToParent, handleOpenModal }) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
     const dispatch = useDispatch();
     const { _id } = useSelector(state => state.auth.userInfo)
     const { resources } = useSelector(state => state.resources) || [];
@@ -54,7 +56,7 @@ const ResourcesUser = ({ sendDataToParent, handleOpenModal }) => {
                             >
                                 <Image
                                     className="relative w-[10.06rem] h-[10.22rem] object-cover"
-                                    src="https://placehold.co/400"
+                                    src={resource.imageURL}
                                     alt="Image"
                                 />
                                 <Box
@@ -66,7 +68,7 @@ const ResourcesUser = ({ sendDataToParent, handleOpenModal }) => {
                                     <Box className="w-[34.06rem] flex flex-col items-start justify-start gap-[1.88rem]">
                                         <Box className="flex flex-row items-center justify-start gap-2">
                                             <Text className="relative uppercase font-medium">
-                                                {resource.createdAt} | {resource.address.city}
+                                                {new Date(resource.createdAt).toLocaleDateString('en-US', options)} | {resource.address.city}
                                             </Text>
                                             <Button
                                                 onClick={() => onEditCLick(resource)}
@@ -89,6 +91,11 @@ const ResourcesUser = ({ sendDataToParent, handleOpenModal }) => {
                                         <Text className="relative text-[1.25rem] leading-[130%] text-dimgray inline-block w-[34.06rem]">
                                             {resource.description}
                                         </Text>
+
+                                        <div className="flex items-center pb-4 justify-center gap-[1.88rem]">
+                                            <Button text="EDIT" bgColor="#FF6D6D" onClick={() => onEditCLick(resource)} textColor="#fff" />
+                                            <Button text="DELETE" bgColor="#000" onClick={() => handleDeleteClick(resource._id)} textColor="#fff" />
+                                        </div>
                                     </Box>
                                 </Box>
                             </Flex>

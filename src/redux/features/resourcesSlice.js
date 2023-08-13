@@ -29,6 +29,18 @@ const resourcesSlice = createSlice({
         },
     },
     extraReducers: {
+        [fetchresourcesuser.pending]: (state) => {
+            state.loading = true;
+            state.error = null;
+        },
+        [fetchresourcesuser.fulfilled]: (state, { payload }) => {
+            state.loading = false;
+            state.resources = payload.resourceList;// registration successful
+        },
+        [fetchresourcesuser.rejected]: (state, { payload }) => {
+            state.loading = false;
+            state.error = payload;
+        },
         [fetchresourcesadmins.pending]: (state) => {
             state.loading = true;
             state.error = null;
@@ -41,6 +53,7 @@ const resourcesSlice = createSlice({
             state.loading = false;
             state.error = payload;
         },
+
     }
 });
 
