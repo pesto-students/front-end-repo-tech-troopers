@@ -11,6 +11,10 @@ const resourcesSlice = createSlice({
     name: 'resources',
     initialState,
     reducers: {
+        deleteResource(state, action) {
+            const resourceId = action.payload;
+            state.resources = state.resources.filter(resource => resource.resourceId !== resourceId);
+        },
         fetchResourcesStart(state) {
             state.loading = true;
             state.error = null;
@@ -25,6 +29,18 @@ const resourcesSlice = createSlice({
         },
     },
     extraReducers: {
+        [fetchresourcesuser.pending]: (state) => {
+            state.loading = true;
+            state.error = null;
+        },
+        [fetchresourcesuser.fulfilled]: (state, { payload }) => {
+            state.loading = false;
+            state.resources = payload.resourceList;// registration successful
+        },
+        [fetchresourcesuser.rejected]: (state, { payload }) => {
+            state.loading = false;
+            state.error = payload;
+        },
         [fetchresourcesadmins.pending]: (state) => {
             state.loading = true;
             state.error = null;
@@ -37,13 +53,15 @@ const resourcesSlice = createSlice({
             state.loading = false;
             state.error = payload;
         },
+
     }
 });
 
 export const {
 
     fetchResourcesSuccess,
-    fetchResourcesStart
+    fetchResourcesStart,
+    deleteResource
 } = resourcesSlice.actions;
 
 export default resourcesSlice.reducer;

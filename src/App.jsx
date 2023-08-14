@@ -11,6 +11,7 @@ import VolunteerSingle from './pages/Volunteer/VolunteerSingle';
 import Volunteer from './pages/Volunteer/Volunteer';
 import Registration from './pages/Registration/Registration';
 import Resources from './pages/Resources/Resources';
+import ResourceSingle from './pages/Resources/ResourceSingle';
 import Error from './components/commons/Error';
 
 function App() {
@@ -18,6 +19,10 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/resources/:resourceId" element={<ResourceSingle />} />
+          <Route path="/volunteer/:volunteerId" element={<VolunteerSingle />} />
+          <Route path="/resources" element={<Resources />} />
           <Route path="/ngodetails" element={<Registration />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />

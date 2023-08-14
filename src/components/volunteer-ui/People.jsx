@@ -19,7 +19,7 @@ const volunteerDummyData = [
   },
 ];
 
-const People = () => {
+const People = (props) => {
   return (
     <section className=" max-w-7xl mx-auto">
       {/* section Top */}
