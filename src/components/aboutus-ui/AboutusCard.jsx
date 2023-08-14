@@ -10,7 +10,9 @@ const AboutusCard = () => {
         <div className="bg-dark text-white p-6">
           <p className="flex items-center space-x-2 text-white text-xl font-shippori">
             <img src={Quotes} className="h-10 w-10" alt="" />
-            <span>No act of kindness, no matter how small, is ever wasted</span>
+            <span>
+              No act of kindness, no matter how small, is ever wasted.
+            </span>
           </p>
         </div>
       </div>
@@ -21,9 +23,12 @@ const AboutusCard = () => {
           title="Solutions to Help People in Need and Save the Planet"
         />
         <p className="text-gray-dark text-xl">
-          Lorem Ipsum is simply dummy text of the printin typesetting dummy text
-          ever when an unknown printer took a galley of type and scrambled it to
-          make a type specimen book.
+          At Brighter Days, we support, characterize and direct the effort and
+          interests of various development activities, united by a common goal
+          to remove poverty. We are deeply committed to influence governments
+          and policy-makers, improve the skills of people in the sector, enhance
+          organizational capability, and deliver opportunities to exchange
+          information, knowledge, and expertise.
         </p>
       </div>
     </section>
