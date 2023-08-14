@@ -12,10 +12,16 @@ import Community from '../../components/homepage-ui/Community';
 import OurEvents from '../../components/homepage-ui/OurEvents';
 import Team from '../../components/homepage-ui/Team';
 import Message from '../../components/homepage-ui/Message';
+import { motion } from 'framer-motion';
 
 const Home = () => {
   return (
-    <div className="scrollbar-hide ">
+    <motion.div
+      className="scrollbar-hide"
+      initial={{ width: 0 }}
+      animate={{ width: '100%' }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+    >
       <Navbar />
       <Banner />
       <Discover />
@@ -28,7 +34,7 @@ const Home = () => {
       <Message />
       <Footer />
       {/* <Carousel /> */}
-    </div>
+    </motion.div>
   );
 };
 

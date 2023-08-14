@@ -8,7 +8,7 @@ const Banner = () => {
     <div className="bg-hero-pattern relative w-screen h-[25vh]  md:h-screen  bg-no-repeat sm:bg-cover md:bg-cover bg-contain">
       <div className="absolute space-y-2 md:space-y-3 md:max-w-5xl max-w-[300px] left-4 top-4 md:left-[20%] md:top-[20%] ">
         <h1 className=" font-shippori text-2xl md:text-9xl font-extrabold text-white">
-          Being Life Saver For Someone
+          Being a Life Saver For Someone.
         </h1>
 
         <div className="flex items-center">
