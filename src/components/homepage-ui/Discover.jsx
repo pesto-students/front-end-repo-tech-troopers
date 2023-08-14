@@ -6,14 +6,14 @@ const discoverDummyData = [
   {
     id: 1,
     title: 'Education',
-    desc: 'Lorem Ipsum is simply dummy text of the printin typesetting  dummy text ever.',
+    desc: 'we outstretch a generation where there are diverse forms of education. Education gives a vision of hope for a better world..',
     backgroundColor: '#77D7D3',
     showButton: true,
   },
   {
     id: 2,
     title: 'Become a Volunteer',
-    desc: 'Lorem Ipsum is simply dummy text of the printin typesetting ',
+    desc: 'We regularly publish selected volunteer opportunities.',
     backgroundColor: '#2E4049',
     showButton: false,
   },
@@ -31,10 +31,10 @@ const Discover = () => {
           }}
           className={`w-48 h-56 md:h-80 py-6 md:py-16 px-3 md:w-96 md:px-10`}
         >
-          <h2 className=" font-shippori text-lg md:text-4xl font-extrabold leading-1">
+          <h2 className=" font-shippori text-lg md:text-4xl -mt-10 font-extrabold leading-1">
             {item.title}
           </h2>
-          <p className="pt-5 pb-5  font-work text-xs md:text-xl font-normal leading-6">
+          <p className="pt-4 pb-5  font-work text-xs md:text-xl font-normal leading-6">
             {item.desc}
           </p>
 

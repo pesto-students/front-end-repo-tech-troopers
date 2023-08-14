@@ -25,15 +25,17 @@ const OurGoal = () => {
           Our Goal
         </h3>
         <p className="text-gray-dark text-xl font-work">
-          Veniam quae. Nostrum facere repellendus minus quod aut aliquam neque
-          reiciendis. Qui beatae vel magnam repudiandae ipsum repella
-          repudiandae. Voluptate at dolores ut dolor sint occaecati similique.
+          The holistic development of every person would contribute to the
+          overall health of society and promote social wellbeing. This would
+          make us realize the philosophy Vasudhaiva Kutumbakam -TheWorld Is One
+          Family.
         </p>
         <Tags />
         <p className="text-gray-dark text-xl font-work">
-          Veniam quae. Nostrum facere repellendus minus quod aut aliquam neque
-          reiciendis. Qui beatae vel magnam repudiandae ipsum repella
-          repudiandae. Voluptate at dolores ut dolor sint occaecati similique.
+          The socioeconomic growth and wellbeing of people are so
+          interconnected, that it is not feasible to ignore any one of them.
+          Hence, we have teamed with a wide cross section of people to bring
+          about a transformation in the rural environment.
         </p>
       </div>
 
@@ -43,9 +45,10 @@ const OurGoal = () => {
           Our Mission
         </h3>
         <p className="text-gray-dark text-xl font-work">
-          Veniam quae. Nostrum facere repellendus minus quod aut aliquam neque
-          reiciendis. Qui beatae vel magnam repudiandae ipsum repella
-          repudiandae. Voluptate at dolores ut dolor sint occaecati similique.
+          Brighter Days is a national level development organization currently
+          benefitting more than 1000 underprivileged children & youth directly
+          through our welfare projects through initiatives in education,
+          healthcare, livelihood, women empowerment.
         </p>
         <div className="relative">
           <img src={Water} alt="" className="h-80 w-96" />

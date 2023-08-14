@@ -10,7 +10,7 @@ const EventCard = ({ image, date, _id, title, description, ngoName }) => {
   console.log(day, month);
 
   const handleEventClick = () => {
-    navigate(`${id}`);
+    navigate(`${_id}`);
   };
 
   return (

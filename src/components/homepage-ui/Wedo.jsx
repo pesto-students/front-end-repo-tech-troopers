@@ -12,37 +12,42 @@ const wedoCardData = [
     id: 1,
     image: Help,
     cardTitle: 'Medicine Help',
-    cardDesc: 'Lorem Ipsum is simply dummy text of the printin typesetting',
+    cardDesc: 'We are constantly aspiring for a better quality of life.',
   },
   {
     id: 2,
     image: Massage,
     cardTitle: 'Water Delivery',
-    cardDesc: 'Lorem Ipsum is simply dummy text of the printin typesetting',
+    cardDesc:
+      'A commitment to convert passion into protection and ensure clean water.',
   },
   {
     id: 3,
     image: Care,
     cardTitle: 'We care about',
-    cardDesc: 'Lorem Ipsum is simply dummy text of the printin typesetting',
+    cardDesc:
+      'Ensuring children receive timely vaccinations and sufficient nutrition.',
   },
   {
     id: 4,
     image: Food,
     cardTitle: 'Food Delivery',
-    cardDesc: 'Lorem Ipsum is simply dummy text of the printin typesetting',
+    cardDesc:
+      'We provide immediate food for today and empower families to produce their own food for tomorrow.',
   },
   {
     id: 5,
     image: Geo,
     cardTitle: 'Spread The World',
-    cardDesc: 'Lorem Ipsum is simply dummy text of the printin typesetting',
+    cardDesc:
+      'To bring the members closer together for the purpose of teaching a simpler, natural way of life.',
   },
   {
     id: 6,
     image: Contract,
     cardTitle: 'Education',
-    cardDesc: 'Lorem Ipsum is simply dummy text of the printin typesetting',
+    cardDesc:
+      'The objective of empowering underprivileged children by providing education, and wellness support.',
   },
 ];
 

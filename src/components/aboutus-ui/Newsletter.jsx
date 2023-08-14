@@ -8,7 +8,7 @@ import Pintrest from '../../assets/pintrest_grey.svg';
 
 const Newsletter = () => {
   return (
-    <div className="bg-message-pattern flex items-center justify-around pb-4 md:pt-16  bg-primary relative w-screen h-full  md:h-[85vh]  bg-no-repeat sm:bg-cover md:bg-cover bg-contain">
+    <div className="bg-message-pattern flex items-center justify-around pb-4 md:pt-16 mt-10  bg-primary relative w-screen h-full  md:h-[85vh]  bg-no-repeat sm:bg-cover md:bg-cover bg-contain">
       <div className="flex flex-col w-[500px] space-y-1 md:space-y-4 items-start justify-center">
         <h5 className="text-dark font-shippori text-4xl font-extrabold">
           Get in Touch With Us
@@ -23,7 +23,7 @@ const Newsletter = () => {
         <div className="flex flex-col py-4 space-y-6 ">
           {/* Icon */}
           <div className="flex space-x-5">
-            <EnvelopeIcon class="h-16 w-16  text-primary bg-white rounded-full px-2 py-2" />
+            <EnvelopeIcon className="h-16 w-16  text-primary bg-white rounded-full px-2 py-2" />
             <div className="flex space-y-1 flex-col">
               {/* message */}
               <h3 className="text-dark font-shippori text-2xl font-extrabold">
@@ -38,7 +38,7 @@ const Newsletter = () => {
           </div>
 
           <div className="flex space-x-5">
-            <PhoneIcon class="h-16 w-16  text-primary bg-white rounded-full px-2 py-2" />
+            <PhoneIcon className="h-16 w-16  text-primary bg-white rounded-full px-2 py-2" />
             <div className="flex space-y-1 flex-col">
               {/* message */}
               <h3 className="text-dark font-shippori text-2xl font-extrabold">

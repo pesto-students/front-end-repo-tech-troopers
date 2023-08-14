@@ -19,14 +19,14 @@ const EventCard = ({ image, cardTitle, cardDesc }) => {
           <span className="text-dark font-medium font-work">Jane Doe</span>
         </p>
 
-        <p className="flex items-center space-x-1">
+        <div className="flex items-center space-x-1">
           <div className="h-6 w-6 flex items-center justify-center rounded-full bg-transparent">
             <img src={Hand} alt="" />
           </div>
           <span className="text-dark font-medium font-work">
             10:00 AM - 18:00 PM, Everyday
           </span>
-        </p>
+        </div>
       </div>
 
       <hr className="border-b border-gray-dark" />

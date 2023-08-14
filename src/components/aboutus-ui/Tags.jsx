@@ -32,7 +32,10 @@ const Tags = () => {
   return (
     <section className="flex flex-wrap max-w-xl gap-3 my-3">
       {tagDummyData.map((item, id) => (
-        <div className="flex items-center h-14 w-60 bg-gray-200  px-2 space-x-2 rounded-full whitespace-nowrap">
+        <div
+          key={id}
+          className="flex items-center h-14 w-60 bg-gray-200  px-2 space-x-2 rounded-full whitespace-nowrap"
+        >
           <img src={item.image} alt="" />
           <h2 className="">{item.cardTitle}</h2>
         </div>

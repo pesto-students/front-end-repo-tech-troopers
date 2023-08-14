@@ -45,7 +45,7 @@ const Team = ({ image, cardTitle }) => {
             Become a Volunteer
           </h2>
           <p className="pb-2 md:py-5 font-work text-xs md:text-xl font-normal leading-6">
-            Centuries but also the leap electtypesetting, remaining
+            Volunteer to serve, spread some smiles!
           </p>
           <Link to="/volunteer">
             <Button text="JOIN US TODAY" bgColor="#2E4049" textColor="#fff" />

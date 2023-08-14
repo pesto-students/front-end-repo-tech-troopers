@@ -16,10 +16,10 @@ const Community = () => {
             Join The Community To Give Education For Children
           </h3>
         </div>
-        <p className="">
-          Lorem Ipsum is simply dummy text of the printin typesetting dummy text
-          ever when an unknown printer took a galley of type and scrambled it to
-          make a type specimen book.
+        <p className="text-lg font-work font-normal text-gray-100">
+          Change comes with the rolling wheels where you move your thought from
+          present situation to a paradise. With such a motive we set forth to
+          bring a new kind of education to the underprivileged.
         </p>
         <img className="bg-contain" src={Children} alt="" />
         <Link to="/events">
