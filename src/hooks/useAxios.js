@@ -9,7 +9,7 @@ const useAxios = () => {
   const fetchData = async (endpoint, method = 'GET', requestBody = {}) => {
     setLoading(true);
     setError(null);
-    const BASE_URL = 'http://localhost:8000/api';
+    const BASE_URL = 'https://brighter-days.onrender.com/api';
     let url = `${BASE_URL}/${endpoint}`;
 
     try {
