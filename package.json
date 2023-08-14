@@ -13,6 +13,7 @@
     "@chakra-ui/icons": "^2.1.0",
     "@chakra-ui/react": "^2.8.0",
     "@cyriacbr/react-split-text": "^1.0.0",
+    "@emotion/babel-plugin": "^11.11.0",
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
     "@hookform/resolvers": "^3.1.1",
