@@ -5,10 +5,16 @@ import VolunteerListing from '../../components/volunteer-ui/VolunteerListing';
 import Search from '../../components/volunteer-ui/Search';
 import Quote from '../../components/volunteer-ui/Quote';
 import Footer from '../../components/commons/Footer';
+import { motion } from 'framer-motion';
 
 const VolunteerSingle = () => {
   return (
-    <div className="bg-[#ECF1F0]">
+    <motion.div
+      initial={{ width: 0 }}
+      animate={{ width: '100%' }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+      className="bg-[#ECF1F0]"
+    >
       <Navbar />
       <VolunteerSingleBanner />
       <Search />
@@ -23,7 +29,7 @@ const VolunteerSingle = () => {
       <VolunteerListing />
       <Quote />
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 
