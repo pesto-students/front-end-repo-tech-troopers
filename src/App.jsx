@@ -12,6 +12,7 @@ import Volunteer from './pages/Volunteer/Volunteer';
 import Registration from './pages/Registration/Registration';
 import Resources from './pages/Resources/Resources';
 import ResourceSingle from './pages/Resources/ResourceSingle';
+import Error from './components/commons/Error';
 
 function App() {
   return (
@@ -25,13 +26,22 @@ function App() {
           <Route path="/ngodetails" element={<Registration />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/" element={<Home />} />
           <Route path="/aboutus" element={<Aboutus />} />
-          <Route path="/donate" element={<Donate />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/eventsingle" element={<EventsSingle />} />
-          <Route path="/donatesingle" element={<DonateSingle />} />
-          <Route path="/volunteer" element={<Volunteer />} />
-          <Route path="/volunteersingle" element={<VolunteerSingle />} />
+          <Route path="/donate">
+            <Route index element={<Donate />} />
+            <Route path=":id" element={<DonateSingle />} />
+          </Route>
+          <Route path="/events">
+            <Route index element={<Events />} />
+            <Route path=":id" element={<EventsSingle />} />
+          </Route>
+          <Route path="/volunteer">
+            <Route index element={<Volunteer />} />
+            <Route path=":id" element={<VolunteerSingle />} />
+          </Route>
+          <Route path="/resources" element={<Resources />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
     </div>
