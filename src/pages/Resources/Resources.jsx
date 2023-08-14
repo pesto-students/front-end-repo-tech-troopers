@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -10,6 +10,7 @@ import Wedo from "../../components/homepage-ui/Wedo";
 import OurCauses from "../../components/homepage-ui/OurCauses";
 import Banner from '../../components/commons/BannerImage';
 import Footer from '../../components/commons/Footer';
+import AlertDialog from '../../components/alerDialog/alertDialog';
 import Aboutus from "../../components/homepage-ui/Aboutus";
 import Goals from "../../components/homepage-ui/Goals";
 import Button from "../../components/ui/Button/Button";
@@ -27,8 +28,27 @@ const Resources = () => {
     )
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [resourceData, setResourceData] = useState(null);
+    const [error, setError] = useState("");
+    const [isAlertOpen, setAlertOpen] = useState(false);
+    const imageURL = useRef('');
+
+    const setImageurl = (url) => {
+        imageURL.current = url
+    }
+
+
     const handleOpenModal = () => {
-        setIsModalOpen(true);
+        if (!role) {
+            setError("Please login to Add a Resource")
+            setAlertOpen(true)
+        } else {
+            setIsModalOpen(true);
+
+        }
+    };
+    const handleChildData = (dataFromChild) => {
+        setResourceData(dataFromChild);
     };
     const resourceSchema = yup.object({
         name: yup.string().required('Name is required'),
@@ -49,20 +69,40 @@ const Resources = () => {
         formState: { errors, isSubmitting },
         handleSubmit,
         register,
+        setValue
     } = useForm({
         resolver: yupResolver(resourceSchema),
     });
+    React.useEffect(() => {
+        if (resourceData) {
+            // Loop through each property in resourceData and set the corresponding form field
+            Object.keys(resourceData).forEach((key) => {
+                setValue(key, resourceData[key]);
+            });
+        }
+    }, [resourceData, setValue]);
     const onSubmit = handleSubmit(async (data) => {
         console.log("here")
+        if (imageURL) data.imageURL = imageURL.current;
         try {
             // setLoading(true);
-            const response = await axiosHelper.post('/resource', data);
-            // setLoading(false);
-            if (response.status === 201) {
-                alert('Form submitted successfully!');
+            if (!resourceData) {
+                const response = await axiosHelper.post('/resource', data);
+                // setLoading(false);
+                if (response.message === "successful") {
+                    alert('Form submitted successfully!');
+                } else {
+                    alert('Form submission failed.');
+                }
             } else {
-                alert('Form submission failed.');
+                const response = await axiosHelper.patch(`/resource/${resourceData._id}`, data);
+                if (response.status === 200) {
+                    alert('Form submitted successfully!');
+                } else {
+                    alert('Form submission failed.');
+                }
             }
+
         } catch (error) {
             alert('An error occurred while submitting the form.');
             console.error('Error:', error);
@@ -157,7 +197,7 @@ const Resources = () => {
 
             </VStack>
         </VStack>
-        <FileUploadButton />
+        <FileUploadButton returnImage={setImageurl} />
         <Button type="submit" text='SUBMIT' bgColor='#FF6D6D' />
 
 
@@ -165,11 +205,15 @@ const Resources = () => {
     return (
         <>
             <LoadingOverlay isLoading={loading}></LoadingOverlay>
-
+            <AlertDialog
+                isOpen={isAlertOpen}
+                onClose={() => { setAlertOpen(false); }}
+                errorMessage={error || ''}
+            />
             <div className='scrollbar-hide'>
                 < Navbar />
                 <Banner backgroundImage='bg-resources' text='Resources' buttons={buttons} />
-                {role === 'NGO_USER' ? (<ResourcesAdmin />) : (<ResourcesUser />)}
+                {role === 'NGO_USER' ? (<ResourcesAdmin />) : (<ResourcesUser sendDataToParent={handleChildData} handleOpenModal={handleOpenModal} handleCloseModal={handleCloseModal} />)}
                 <Footer />
             </div>
             {ReactDOM.createPortal(

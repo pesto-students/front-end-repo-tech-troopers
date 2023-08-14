@@ -25,6 +25,7 @@ import '../SignIn/SignIn.css';
 import SignUpForm from '../../forms/SignupForms';
 // import MyFormComponent from './MyFormComponent'; // Import your child form component
 
+const PHONE_REGEX = /^[0-9]{10}$/;
 const SignUp = () => {
   const [isAlertOpen, setAlertOpen] = useState(false);
   const { loading, userInfo, error, success } = useSelector(
@@ -33,6 +34,10 @@ const SignUp = () => {
   const schema = yup.object().shape({
     name: yup.string().required('Name is required'),
     email: yup.string().required('E-mail is required.'),
+    phoneNumber: yup
+      .string()
+      .matches(PHONE_REGEX, 'Phone number is not valid')
+      .required('Phone number is required'),
     role: yup.string().required('Role is required'),
     password: yup.string().required('Password is required.'),
     confirmPassword: yup.string().required('Confirm Password is required'),

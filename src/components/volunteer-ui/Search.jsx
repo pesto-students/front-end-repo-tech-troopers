@@ -1,16 +1,38 @@
-import { FaSearch } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { InputGroup, Input, InputRightElement } from '@chakra-ui/react';
+import { SearchIcon } from '@chakra-ui/icons';
+import _ from 'lodash';
 
-const Search = () => {
+const SearchElement = ({ onSearch }) => {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const delayedSearch = _.debounce((query) => {
+    if (query.length > 3) {
+      onSearch(query);
+    }
+  }, 300);
+
+  const handleSearch = (event) => {
+    const { value } = event.target;
+    setSearchQuery(value);
+    delayedSearch(value);
+  };
+
   return (
-    <section className="flex mx-auto items-center rounded-full mt-32 justify-end h-20 px-4 py-4 border w-[60%]">
-      <input
-        type="text"
-        className="w-1/2 text-dark font-work font-normal bg-[#ECF1F0]  items-start"
-        placeholder="Search by organization name, location"
+    <InputGroup size="md" my={3} bg="white" className='w-[850px] mx-auto mt-16 mb-6 max-w-6xl'> {/* Add margin on top and bottom */}
+      <Input
+        placeholder="Search..."
+        value={searchQuery}
+        onChange={handleSearch}
+        pr="4.5rem"
+        variant="outline"
+        className='bg-white'
       />
-      <FaSearch className="h-6 w-6" />
-    </section>
+      <InputRightElement width="4.5rem" height="100%">
+        <SearchIcon color="gray.300" />
+      </InputRightElement>
+    </InputGroup>
   );
 };
 
-export default Search;
+export default SearchElement;

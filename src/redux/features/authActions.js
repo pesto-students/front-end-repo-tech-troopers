@@ -80,3 +80,39 @@ export const addngodetails = createAsyncThunk(
         }
     }
 )
+
+export const toggleresourcestatus = createAsyncThunk(
+    'auth/resources',
+    async ({ action, userID, resourceID }, { rejectWithValue }) => {
+        try {
+            await axiosHelper.patch(`/resource/update-resource-status/${resourceID}/${userID}`, {
+                action
+            }, CONFIG)
+            return { resourceID, action }
+        } catch (error) {
+            if (error.response && error.response.data.message) {
+                return rejectWithValue(error.response.data.message);
+            } else {
+                return rejectWithValue(error.message);
+            }
+        }
+    }
+)
+
+export const togglevolunteerstatus = createAsyncThunk(
+    'auth/volunteers',
+    async ({ action, volunteerId }, { rejectWithValue }) => {
+        try {
+            await axiosHelper.patch(`/voluntary/${action}/${volunteerId}`, {
+
+            }, CONFIG)
+            return { volunteerId, action }
+        } catch (error) {
+            if (error.response && error.response.data.message) {
+                return rejectWithValue(error.response.data.message);
+            } else {
+                return rejectWithValue(error.message);
+            }
+        }
+    }
+)

@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
@@ -6,13 +6,20 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-const DropDown = () => {
+const DropDown = (props) => {
+
+  const { options, onOptionChange } = props;
+
+  const handleOptionChange = (option) => {
+    onOptionChange(option); // Call the parent function with the selected option
+  };
+
   return (
     <section className="">
-      <Menu as="div" className="relative ml-32 inline-block text-left">
+      <Menu as="div" className="relative ml-32 inline-block text-left" handle>
         <div>
           <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-            Cause/category
+            {props.filterName}
             <ChevronDownIcon
               className="-mr-1 h-5 w-5 text-gray-400"
               aria-hidden="true"
@@ -31,90 +38,22 @@ const DropDown = () => {
         >
           <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="py-1">
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="#"
-                    className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm'
-                    )}
-                  >
-                    Education and Tutoring
-                  </a>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="#"
-                    className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm'
-                    )}
-                  >
-                    Environmental Conservation
-                  </a>
-                )}
-              </Menu.Item>
-            </div>
-            <div className="py-1">
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="#"
-                    className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm'
-                    )}
-                  >
-                    Community Development
-                  </a>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="#"
-                    className={classNames(
-                      active ? 'bg-gray-100 text-black' : 'text-gray-700',
-                      'block px-4 py-2 text-sm'
-                    )}
-                  >
-                    Technology and Digital Skills
-                  </a>
-                )}
-              </Menu.Item>
-            </div>
-            <div className="py-1">
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="#"
-                    className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm'
-                    )}
-                  >
-                    Animal Welfare
-                  </a>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <a
-                    href="#"
-                    className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block px-4 py-2 text-sm'
-                    )}
-                  >
-                    Arts and culture
-                  </a>
-                )}
-              </Menu.Item>
-            </div>
-            <div className="py-1">
+              {options.map((option, index) => (
+                <Menu.Item key={index}>
+                  {({ active }) => (
+                    <a
+                      href="#"
+                      className={classNames(
+                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                        'block px-4 py-2 text-sm'
+                      )}
+                      onClick={() => handleOptionChange(option)}
+                    >
+                      {option}
+                    </a>
+                  )}
+                </Menu.Item>
+              ))}
               <Menu.Item>
                 {({ active }) => (
                   <a
