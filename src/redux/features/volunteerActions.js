@@ -9,17 +9,15 @@ const CONFIG = {
 };
 
 export const fetchvolunteersadmins = createAsyncThunk(
-  '/voluntary/admin',
+  'volunteer/',
   async ({ }, { rejectWithValue }) => {
     try {
-      const queryParams = {};
 
       const data = await axiosHelper.get(
         '/voluntary/admin',
         {
-          params: queryParams,
         },
-        CONFIG,
+        {}
       );
       return data;
     } catch (error) {
@@ -28,7 +26,7 @@ export const fetchvolunteersadmins = createAsyncThunk(
   },
 );
 export const fetchvolunteersuser = createAsyncThunk(
-  'uservolunteers', // Provide a unique action name
+  'volunteer/uservolunteers', // Provide a unique action name
   async ({ search, filter }, { rejectWithValue }) => { // You're not using the first parameter, so use "_"
     try {
       // Modify queryParams if needed
