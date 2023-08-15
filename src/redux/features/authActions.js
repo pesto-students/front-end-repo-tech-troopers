@@ -49,7 +49,7 @@ export const signinuser = createAsyncThunk(
       );
       localStorage.removeItem('userToken');
       localStorage.setItem('userToken', data.token);
-      // localStorage.setItem('userRole', data.userInfo.role);
+      localStorage.setItem('userRole', data.userInfo.role);
       return data;
     } catch (error) {
       if (error.response && error.response.data.message) {
@@ -75,7 +75,7 @@ export const addngodetails = createAsyncThunk(
       );
       localStorage.removeItem('userToken');
       localStorage.setItem('userToken', data.token);
-      // localStorage.setItem('userRole', data?.userInfo.role);
+      localStorage.setItem('userRole', data?.userInfo.role);
       return data;
     } catch (error) {
       if (error.response && error.response.data.message) {
