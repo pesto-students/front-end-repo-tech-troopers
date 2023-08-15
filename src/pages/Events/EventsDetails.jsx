@@ -13,10 +13,8 @@ const EventsDetails = () => {
     fetchData('event');
   }, []);
 
-  console.log(data?.eventList);
 
   const eventDetails = data?.eventList[0];
-  console.log({ eventDetails });
 
   return (
     <motion.div

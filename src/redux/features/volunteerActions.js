@@ -4,6 +4,7 @@ import axiosHelper from '../../axiosHelper';
 const CONFIG = {
   headers: {
     'Content-Type': 'application/json',
+    'x-auth-token': `${localStorage.getItem('userToken')}`
   },
 };
 

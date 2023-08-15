@@ -12,10 +12,11 @@ const DonateCard = ({
   calculatedAmount,
 }) => {
   const navigate = useNavigate();
-
+  const role = localStorage.getItem('userRole');
   const handleEventClick = () => {
     navigate(`${_id}`);
   };
+
 
   return (
     <div className="shadow-lg">
@@ -32,9 +33,9 @@ const DonateCard = ({
           <p className="font-bold text-dark text-xl p-4 rounded-full bg-gray-100 font-shippori">
             Donation: {calculatedAmount}/{amount}
           </p>
-          <Link to={`/donate/${_id}`}>
+          {role === 'USER' && (<Link to={`/donate/${_id}`}>
             <Button bgColor="#2E4049" text="DONATE" />
-          </Link>
+          </Link>)}
         </div>
       </div>
     </div>

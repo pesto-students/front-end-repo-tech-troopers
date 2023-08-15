@@ -19,7 +19,6 @@ const ResourcesAdmin = () => {
   const { resources } = useSelector((state) => state.resources) || [];
   // async function onReadMoreClick() {
   useEffect(() => {
-    console.log('here');
     if (userInfo)
       dispatch(fetchresourcesadmins({ city: userInfo.address.city }));
   }, []);

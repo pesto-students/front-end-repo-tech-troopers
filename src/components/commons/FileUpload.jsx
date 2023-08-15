@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Button } from '@chakra-ui/react';
 import axiosHelper from '../../axiosHelper';
 import LoadingOverlay from '../../components/loader/Loader';
+import Button from '../ui/Button/Button';
 
 const FileUploadButton = ({ returnImage }) => {
   const [loading, isLoading] = useState(false);
@@ -50,10 +50,13 @@ const FileUploadButton = ({ returnImage }) => {
         style={{ display: 'none' }}
         onChange={handleFileChange}
       />
+
       <Button
+        className='py-8 bg-primary'
+        bgColor={'#FF6D6D'}
+        text='Upload Image'
         onClick={() => document.querySelector('input[type="file"]').click()}
       >
-        Upload File
       </Button>
     </>
   );

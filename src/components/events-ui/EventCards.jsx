@@ -45,7 +45,6 @@ function EventCards() {
     fetchData('event');
   }, []);
 
-  console.log(data?.eventList);
 
   return (
     <section className="p-10 w-full bg-white">

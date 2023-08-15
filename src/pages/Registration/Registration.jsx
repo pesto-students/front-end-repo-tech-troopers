@@ -49,7 +49,6 @@ const Registration = () => {
   });
 
   const onSubmit = handleSubmit((values) => {
-    // console.log("here")
     values.userId = userInfo._id;
     dispatch(addngodetails(values));
   });

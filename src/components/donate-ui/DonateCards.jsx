@@ -9,57 +9,6 @@ import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState, useEffect } from 'react';
 import { SpinnerCircular } from 'spinners-react';
 
-// const cardDummyData = [
-//   {
-//     id: 1,
-//     image: School,
-//     cardTitle: 'Big charity: build school for poor children',
-//     raisedAmt: '5M',
-//     goalAmt: '10M',
-//     percentRaised: '50',
-//   },
-//   {
-//     id: 2,
-//     image: Aid,
-//     cardTitle: 'Big charity: build school for poor children',
-//     raisedAmt: '5M',
-//     goalAmt: '10M',
-//     percentRaised: '50',
-//   },
-//   {
-//     id: 3,
-//     image: Water,
-//     cardTitle: 'Big charity: build school for poor children',
-//     raisedAmt: '5M',
-//     goalAmt: '10M',
-//     percentRaised: '50',
-//   },
-//   {
-//     id: 4,
-//     image: Water,
-//     cardTitle: 'Big charity: build school for poor children',
-//     raisedAmt: '5M',
-//     goalAmt: '10M',
-//     percentRaised: '50',
-//   },
-//   {
-//     id: 5,
-//     image: Water,
-//     cardTitle: 'Big charity: build school for poor children',
-//     raisedAmt: '5M',
-//     goalAmt: '10M',
-//     percentRaised: '50',
-//   },
-//   {
-//     id: 6,
-//     image: Water,
-//     cardTitle: 'Big charity: build school for poor children',
-//     raisedAmt: '5M',
-//     goalAmt: '10M',
-//     percentRaised: '50',
-//   },
-// ];
-
 function DonateCards({ openModal }) {
   const { data, loading, error, fetchData } = useAxios();
   let [isOpen, setIsOpen] = useState(false);
@@ -78,7 +27,6 @@ function DonateCards({ openModal }) {
     fetchData('cause');
   }, []);
 
-  console.log(data?.causeList);
   return (
     <section className="relative p-10 w-full bg-gray-50">
       {loading ? (

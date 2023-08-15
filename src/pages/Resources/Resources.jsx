@@ -83,7 +83,6 @@ const Resources = () => {
     }
   }, [error, data])
   const onSubmit = handleSubmit(async (data) => {
-    console.log('here');
     if (imageURL) data.imageURL = imageURL.current;
     try {
       if (!resourceData) {
@@ -271,8 +270,10 @@ const Resources = () => {
           </FormControl>
         </VStack>
       </VStack>
-      <FileUploadButton returnImage={setImageurl} />
-      <Button type='submit' text='SUBMIT' bgColor='#FF6D6D' />
+      <div className='space-y-3 flex justify-around items-center'>
+        <FileUploadButton returnImage={setImageurl} />
+        <Button style={{ paddingTop: '5px' }} type='submit' text='SUBMIT' bgColor='#2E4049' />
+      </div>
     </form>
   );
   return (

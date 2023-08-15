@@ -7,7 +7,6 @@ import getDayAndMonth from '../../utils/getDayAndMonth';
 const EventCard = ({ image, date, _id, title, description, ngoName }) => {
   const navigate = useNavigate();
   let { day, month } = getDayAndMonth(date);
-  console.log(day, month);
 
   const handleEventClick = () => {
     navigate(`${_id}`);
