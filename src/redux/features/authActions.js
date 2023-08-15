@@ -21,6 +21,7 @@ export const signupuser = createAsyncThunk(
         },
         CONFIG
       );
+      localStorage.removeItem('userToken');
       localStorage.setItem('userToken', data.token);
       localStorage.setItem('userRole', data?.userInfo.role);
       return data;
@@ -46,6 +47,7 @@ export const signinuser = createAsyncThunk(
         },
         CONFIG
       );
+      localStorage.removeItem('userToken');
       localStorage.setItem('userToken', data.token);
       // localStorage.setItem('userRole', data.userInfo.role);
       return data;
@@ -71,6 +73,7 @@ export const addngodetails = createAsyncThunk(
         },
         CONFIG
       );
+      localStorage.removeItem('userToken');
       localStorage.setItem('userToken', data.token);
       // localStorage.setItem('userRole', data?.userInfo.role);
       return data;
