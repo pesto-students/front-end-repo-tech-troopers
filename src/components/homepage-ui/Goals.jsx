@@ -36,14 +36,14 @@ const goalDummyData = [
 
 const Goals = () => {
   return (
-    <div className="bg-gray-100 p-4 md:px-10 h-fit md:py-14 rounded mt-4 md:mt-0">
-      <div className="flex items-center space-x-10">
-        <div className="flex flex-col space-y-3">
+    <div className='bg-gray-100 p-4 md:px-10 h-fit md:py-14 rounded mt-4 md:mt-0'>
+      <div className='flex items-center space-x-10'>
+        <div className='flex flex-col space-y-3'>
           {goalDummyData.slice(0, 3).map((goal) => (
             <Goal {...goal} key={goal.id} />
           ))}
         </div>
-        <div className="flex flex-col space-y-3">
+        <div className='flex flex-col space-y-3'>
           {goalDummyData.slice(3, 6).map((goal) => (
             <Goal {...goal} key={goal.id} />
           ))}

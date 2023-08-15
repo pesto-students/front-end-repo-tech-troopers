@@ -11,20 +11,20 @@ const Banner = () => {
           Being a Life Saver For Someone.
         </h1>
 
-        <div className="flex items-center">
-          <div className="w-3 h-3 md:w-6 md:h-6 rounded-full bg-white" />
-          <div className="h-[2px] w-10 md:w-80 bg-white" />
-          <div className="border border-white rounded-full px-4  md:px-16 py-1 text-white tracking-wider  md:tracking-[5px] font-work text-[10px] md:text-lg font-medium">
+        <div className='flex items-center'>
+          <div className='w-3 h-3 md:w-6 md:h-6 rounded-full bg-white' />
+          <div className='h-[2px] w-10 md:w-80 bg-white' />
+          <div className='border border-white rounded-full px-4  md:px-16 py-1 text-white tracking-wider  md:tracking-[5px] font-work text-[10px] md:text-lg font-medium'>
             BRIGHTER DAYS
           </div>
         </div>
 
-        <div className="flex items-center space-x-3">
+        <div className='flex items-center space-x-3'>
           <Link to={`/donate`}>
-            <Button bgColor="#FF6D6D" text="DONATE" />
+            <Button bgColor='#FF6D6D' text='DONATE' />
           </Link>
           <Link to={`/volunteer`}>
-            <Button text="VOLUNTEER" bgColor="#fff" textColor="#000" />
+            <Button text='VOLUNTEER' bgColor='#fff' textColor='#000' />
           </Link>
         </div>
       </div>

@@ -1,6 +1,5 @@
-import axiosHelper from '../../axiosHelper';
-
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import axiosHelper from '../../axiosHelper';
 
 const CONFIG = {
   headers: {
@@ -72,6 +71,8 @@ export const addngodetails = createAsyncThunk(
         },
         CONFIG
       );
+      localStorage.setItem('userToken', data.token);
+      localStorage.setItem('userRole', data.userInfo.role);
       return data;
     } catch (error) {
       if (error.response && error.response.data.message) {

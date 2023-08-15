@@ -6,7 +6,7 @@ import ScrollToTop from './components/commons/ScrollToTop';
 
 function App() {
   return (
-    <div className="app">
+    <div className='app'>
       <BrowserRouter>
         <ScrollToTop />
         <AnimatedRoutes />

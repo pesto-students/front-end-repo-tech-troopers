@@ -21,7 +21,7 @@ const discoverDummyData = [
 
 const Discover = () => {
   return (
-    <section className="flex items-start overflow-x-hidden justify-around md:justify-center mx-auto">
+    <section className='flex items-start overflow-x-hidden justify-around md:justify-center mx-auto'>
       {discoverDummyData.map((item, id) => (
         <div
           key={id}
@@ -39,13 +39,13 @@ const Discover = () => {
           </p>
 
           {item.showButton ? (
-            <Link to="/resources">
-              <Button text="DISCOVER" bgColor="#fff" textColor="#000" />
+            <Link to='/resources'>
+              <Button text='DISCOVER' bgColor='#fff' textColor='#000' />
             </Link>
           ) : (
             <a
-              className="text-white underline md:no-underline hover:underline font-work text-xs md:text-lg"
-              href=""
+              className='text-white underline md:no-underline hover:underline font-work text-xs md:text-lg'
+              href=''
             >
               JOIN ORGANIZATION
             </a>
@@ -53,9 +53,9 @@ const Discover = () => {
         </div>
       ))}
 
-      <div className="relative h-80 hidden md:inline-block overflow-y-hidden">
-        <img className="object-contain" src={DiscoverBanner} alt="" />
-        <div className="absolute inset-0 bg-primary/40" />
+      <div className='relative h-80 hidden md:inline-block overflow-y-hidden'>
+        <img className='object-contain' src={DiscoverBanner} alt='' />
+        <div className='absolute inset-0 bg-primary/40' />
       </div>
     </section>
   );

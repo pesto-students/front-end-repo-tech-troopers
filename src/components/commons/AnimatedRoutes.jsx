@@ -11,6 +11,7 @@ import VolunteerSingle from '../../pages/Volunteer/VolunteerSingle';
 import Volunteer from '../../pages/Volunteer/Volunteer';
 import Registration from '../../pages/Registration/Registration';
 import Resources from '../../pages/Resources/Resources';
+import ResourceSingle from '../../pages/Resources/ResourceSingle';
 // import Error from './components/commons/Error';
 import { AnimatePresence } from 'framer-motion';
 
@@ -34,12 +35,15 @@ function AnimatedRoutes() {
         </Route>
         <Route path="/volunteer">
           <Route index element={<Volunteer />} />
-          <Route path=":id" element={<VolunteerSingle />} />
+          <Route path=":volunteerId" element={<VolunteerSingle />} />
         </Route>
-        <Route path="/resources" element={<Resources />} />
+        <Route path="/resources">
+          <Route index element={<Resources />} />
+          <Route path=":resourceId" element={<ResourceSingle />} />
+        </Route>
         {/* <Route path="*" element={<Error />} /> */}
       </Routes>
-    </AnimatePresence>
+    </AnimatePresence >
   );
 }
 
