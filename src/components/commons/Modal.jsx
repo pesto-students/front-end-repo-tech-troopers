@@ -14,7 +14,7 @@ const ModalComponent = ({ isOpen, onClose, title, body, buttons }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent bg='#f1eeec'>
+      <ModalContent bg='#f1eeec' maxW="90%">
         <ModalHeader align='center'>
           <div className='text-primary align-center font-ellen text-2xl md:text-4xl'>
             {' '}
@@ -22,7 +22,7 @@ const ModalComponent = ({ isOpen, onClose, title, body, buttons }) => {
           </div>
         </ModalHeader>
         <ModalCloseButton />
-        <ModalBody>
+        <ModalBody overflowX="auto">
           {/* Your modal content here */}
           {body}
         </ModalBody>
