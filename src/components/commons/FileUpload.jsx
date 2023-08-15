@@ -40,6 +40,10 @@ const FileUploadButton = ({ returnImage }) => {
       console.error(error);
     }
   };
+  function handleClick(e) {
+    e.preventDefault();
+    document.querySelector('input[type="file"]').click()
+  }
 
   return (
     <>
@@ -50,14 +54,14 @@ const FileUploadButton = ({ returnImage }) => {
         style={{ display: 'none' }}
         onChange={handleFileChange}
       />
-
-      <Button
+      <div className='cursor-pointer'>   <Button
         className='py-8 bg-primary'
         bgColor={'#FF6D6D'}
         text='Upload Image'
-        onClick={() => document.querySelector('input[type="file"]').click()}
-      >
-      </Button>
+        onClick={handleClick}
+      />
+      </div >
+
     </>
   );
 };

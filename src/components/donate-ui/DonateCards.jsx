@@ -43,7 +43,7 @@ function DonateCards({ openModal }) {
       {role !== 'USER' && data ? (
         <div
           onClick={openModal}
-          className="absolute w-full bottom-10 left-[90%]"
+          className="absolute w-full bottom-10 left-[90%] cursor-pointer"
         >
           <span className="p-4 bg-primary h-16 w-16 rounded-full text-white text-3xl font-extrabold flex items-center justify-center">
             +
