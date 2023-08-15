@@ -112,7 +112,7 @@ const ResourcesUser = ({ sendDataToParent, handleOpenModal }) => {
                     {resource.description}
                   </Text>
 
-                  <div className='flex items-center pb-4 justify-center gap-[1.88rem]'>
+                  {resource.status !== 'APPROVED' && (<div className='flex items-center pb-4 justify-center gap-[1.88rem]'>
                     <Button
                       text='EDIT'
                       bgColor='#FF6D6D'
@@ -125,7 +125,7 @@ const ResourcesUser = ({ sendDataToParent, handleOpenModal }) => {
                       onClick={() => handleDeleteClick(resource._id)}
                       textColor='#fff'
                     />
-                  </div>
+                  </div>)}
                 </Box>
               </Box>
             </Flex>

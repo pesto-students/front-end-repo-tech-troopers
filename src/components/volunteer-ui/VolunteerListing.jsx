@@ -11,7 +11,7 @@ const VolunteerListing = ({ volunteerDetails, children }) => {
           {volunteerDetails?.ngoDetailId && volunteerDetails?.ngoDetailId.ngoName}
         </h3>
         <h4 className='text-gray-dark font-work text-2xl font-normal'>
-          {address && address.addressLine2} {address && address.addressLine2} |{' '}
+          {address && address.addressLine1} {address && address.addressLine2} |{' '}
           {address && address.city}
         </h4>
         <h5 className='text-gray-dark font-work text-2xl font-normal'>
