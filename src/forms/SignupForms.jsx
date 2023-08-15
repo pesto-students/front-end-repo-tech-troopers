@@ -11,24 +11,24 @@ import {
 const SignUpForm = ({ onSubmitStep1, errors, register, isSubmitting }) => {
   return (
     <form onSubmit={onSubmitStep1}>
-      <VStack spacing="10rem">
-        <div className="self-stretch relative text-[1.25rem] leading-[130%] font-work text-gray-dark text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua quis.
+      <VStack spacing='10rem'>
+        <div className='self-stretch relative text-[1.25rem] leading-[130%] font-work text-gray-dark text-center'>
+          Connecting hearts, sharing dreams, and building communities – one
+          login at a time.
         </div>
       </VStack>
-      <VStack spacing="10rem">
+      <VStack spacing='10rem'>
         <FormControl
-          id="name"
+          id='name'
           isInvalid={!!errors.name}
-          className="flex flex-col justify-center items-center mb-8 mt-8"
+          className='flex flex-col justify-center items-center mb-8 mt-8'
         >
           <Input
-            type="text"
-            placeholder="Name"
-            h="4rem"
+            type='text'
+            placeholder='Name'
+            h='4rem'
             w={['full', 'full', '50%']}
-            size="sm"
+            size='sm'
             style={{ backgroundColor: 'white' }}
             autoFocus={true}
             {...register('name')}
@@ -39,16 +39,16 @@ const SignUpForm = ({ onSubmitStep1, errors, register, isSubmitting }) => {
         </FormControl>
       </VStack>
       <FormControl
-        id="email"
+        id='email'
         isInvalid={!!errors.email}
-        className="flex flex-col justify-center items-center mb-8 "
+        className='flex flex-col justify-center items-center mb-8 '
       >
         <Input
-          placeholder="E-mail"
-          type="email"
-          h="4rem"
+          placeholder='E-mail'
+          type='email'
+          h='4rem'
           w={['full', 'full', '50%']}
-          size="sm"
+          size='sm'
           style={{ backgroundColor: 'white' }}
           autoFocus={true}
           {...register('email')}
@@ -56,16 +56,16 @@ const SignUpForm = ({ onSubmitStep1, errors, register, isSubmitting }) => {
         <FormErrorMessage>{errors.email?.message}</FormErrorMessage>
       </FormControl>
       <FormControl
-        id="phoneNumber"
+        id='phoneNumber'
         isInvalid={!!errors.phoneNumber}
-        className="flex flex-col justify-center items-center mb-8 "
+        className='flex flex-col justify-center items-center mb-8 '
       >
         <Input
-          placeholder="Phone number"
-          type="tel"
-          h="4rem"
+          placeholder='Phone number'
+          type='tel'
+          h='4rem'
           w={['full', 'full', '50%']}
-          size="sm"
+          size='sm'
           style={{ backgroundColor: 'white' }}
           autoFocus={true}
           {...register('phoneNumber')}
@@ -73,37 +73,37 @@ const SignUpForm = ({ onSubmitStep1, errors, register, isSubmitting }) => {
         <FormErrorMessage>{errors.phoneNumber?.message}</FormErrorMessage>
       </FormControl>
       <FormControl
-        id="role"
+        id='role'
         isInvalid={!!errors.role}
-        className="flex flex-col justify-center items-center mb-8 "
+        className='flex flex-col justify-center items-center mb-8 '
       >
         <Select
-          id="role"
-          size="lg"
-          bg="white"
+          id='role'
+          size='lg'
+          bg='white'
           autoFocus={true}
-          h="4rem"
+          h='4rem'
           w={['full', 'full', '50%']}
           {...register('role')}
         >
           {/* Add options for the Select dropdown here */}
-          <option value="NGO_USER">NGO Admin</option>
-          <option value="USER">User</option>
-        </Select>
+          <option value='NGO_USER'>NGO Admin</option>
+          <option value='USER'>User</option>
+        </Select >
         <FormErrorMessage>{errors.role?.message}</FormErrorMessage>
-      </FormControl>
+      </FormControl >
       <VStack spacing={4}>
         <FormControl
-          id="password"
+          id='password'
           isInvalid={!!errors.password}
-          className="flex flex-col justify-center items-center mb-8 "
+          className='flex flex-col justify-center items-center mb-8 '
         >
           <Input
-            placeholder="Password"
-            type="password"
-            h="4rem"
+            placeholder='Password'
+            type='password'
+            h='4rem'
             w={['full', 'full', '50%']}
-            size="sm"
+            size='sm'
             style={{ backgroundColor: 'white' }}
             {...register('password')}
           />
@@ -112,16 +112,16 @@ const SignUpForm = ({ onSubmitStep1, errors, register, isSubmitting }) => {
       </VStack>
       <VStack spacing={4}>
         <FormControl
-          id="confirmPassword"
+          id='confirmPassword'
           isInvalid={!!errors.password}
-          className="flex flex-col justify-center items-center mb-8 "
+          className='flex flex-col justify-center items-center mb-8 '
         >
           <Input
-            placeholder="Confirm Password"
-            type="password"
-            h="4rem"
+            placeholder='Confirm Password'
+            type='password'
+            h='4rem'
             w={['full', 'full', '50%']}
-            size="sm"
+            size='sm'
             style={{ backgroundColor: 'white' }}
             {...register('confirmPassword')}
           />
@@ -131,20 +131,20 @@ const SignUpForm = ({ onSubmitStep1, errors, register, isSubmitting }) => {
 
       <VStack spacing={4}>
         <Button
-          type="submit"
-          borderRadius="50px"
-          colorScheme="#2e4049"
-          margin="1em"
-          w="10rem"
-          h="4rem"
-          className="bg-dark "
-          size="lg"
+          type='submit'
+          borderRadius='50px'
+          colorScheme='#2e4049'
+          margin='1em'
+          w='10rem'
+          h='4rem'
+          className='bg-dark '
+          size='lg'
           isLoading={isSubmitting}
         >
-          SIGN IN
+          SIGN UP
         </Button>
       </VStack>
-    </form>
+    </form >
   );
 };
 

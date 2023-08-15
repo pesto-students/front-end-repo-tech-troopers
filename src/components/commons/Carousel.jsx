@@ -9,7 +9,6 @@ export default function Carousel() {
   let prev = usePrevious(count);
 
   let direction = count > prev ? 1 : -1;
-  console.log({ direction });
 
   return (
     <div className='text-white'>
@@ -36,9 +35,8 @@ export default function Carousel() {
               exit='exit'
               custom={{ direction, width }}
               transition={{ duration: 1 }}
-              className={`absolute w-20 h-20 flex items-center justify-center ${
-                colors[Math.abs(count) % 4]
-              }`}
+              className={`absolute w-20 h-20 flex items-center justify-center ${colors[Math.abs(count) % 4]
+                }`}
             >
               {count}
             </motion.div>

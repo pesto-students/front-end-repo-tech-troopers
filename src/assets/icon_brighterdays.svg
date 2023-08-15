@@ -1,11 +1,1 @@
-<svg width="21" height="45" viewBox="0 0 21 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Frame" clip-path="url(#clip0_382_187)">
-<path id="Vector" d="M20.7563 1.83409C20.7265 1.60565 20.4297 1.64311 20.4059 1.87226C18.4995 20.1999 8.10593 19.5591 1.98436 17.8021C1.75139 17.7352 1.57609 18.1378 1.77806 18.2717C13.5937 26.11 12.428 34.7126 7.38994 43.3478C7.27408 43.5463 7.51897 43.7499 7.68441 43.5903C19.4618 32.2233 21.8669 10.334 20.7563 1.83409Z" fill="#FF6D6D"/>
-<circle id="Ellipse" cx="9.5" cy="9" r="4.5" fill="#77D7D3"/>
-</g>
-<defs>
-<clipPath id="clip0_382_187">
-<rect width="21" height="44" fill="white" transform="translate(0 0.5)"/>
-</clipPath>
-</defs>
-</svg>
+<svg width="21" height="45" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M20.756 1.834c-.03-.228-.326-.19-.35.038C18.5 20.2 8.106 19.56 1.984 17.802c-.233-.067-.408.336-.206.47 11.816 7.838 10.65 16.44 5.612 25.076-.116.198.129.402.294.242C19.462 32.223 21.867 10.334 20.756 1.834Z" fill="#FF6D6D"/><circle cx="9.5" cy="9" r="4.5" fill="#77D7D3"/></g><defs><clipPath id="a"><path fill="#fff" transform="translate(0 .5)" d="M0 0h21v44H0z"/></clipPath></defs></svg>

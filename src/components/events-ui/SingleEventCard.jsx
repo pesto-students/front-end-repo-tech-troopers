@@ -26,19 +26,19 @@ const discoverDummyData = [
 
 const SingleEventCard = ({ description }) => {
   return (
-    <section className="flex px-6 items-center justify-center py-6">
-      <div className="flex flex-col items-center">
-        <img src={Education} className="bg-cover w-[800px]" alt="" />
-        <div className="flex items-center justify-center -mt-10">
+    <section className='flex px-6 items-center justify-center py-6'>
+      <div className='flex flex-col items-center'>
+        <img src={Education} className='bg-cover w-[800px]' alt='' />
+        <div className='flex items-center justify-center -mt-10'>
           {discoverDummyData.map((item, id) => (
             <div key={id} style={{ backgroundColor: item.backgroundColor }}>
               <div
                 className={`w-48 h-56 md:h-48 py-6 md:py-10 px-3 md:w-56 md:px-6`}
               >
-                <h2 className="font-shippori text-lg md:text-2xl text-white font-extrabold leading-1">
+                <h2 className='font-shippori text-lg md:text-2xl text-white font-extrabold leading-1'>
                   {item.title}
                 </h2>
-                <p className="pt-5 pb-5 font-work text-xs md:text-lg text-white font-normal leading-6">
+                <p className='pt-5 pb-5 font-work text-xs md:text-lg text-white font-normal leading-6'>
                   {item.desc}
                 </p>
               </div>
@@ -46,19 +46,19 @@ const SingleEventCard = ({ description }) => {
           ))}
         </div>
         {/* Event Description */}
-        <div className="max-w-xl">
-          <h3 className="pt-12 pb-3 text-3xl font-shippori font-extrabold ">
+        <div className='max-w-xl'>
+          <h3 className='pt-12 pb-3 text-3xl font-shippori font-extrabold '>
             Event Description{' '}
           </h3>
           <p className="text-gray-dark text-xl font-normal">{description}</p>
         </div>
 
         {/* Event Condent */}
-        <div className="max-w-xl">
-          <h3 className="pt-12 pb-3 text-3xl font-shippori font-extrabold ">
+        <div className='max-w-xl'>
+          <h3 className='pt-12 pb-3 text-3xl font-shippori font-extrabold '>
             Event Condent{' '}
           </h3>
-          <p className="text-gray-dark text-xl font-normal">
+          <p className='text-gray-dark text-xl font-normal'>
             Veniam quae. Nostrum facere repellendus minus quod aut aliquam neque
             reiciendis. Qui beatae vel magnam repudiandae ipsum repellat
             repudiandae. Voluptate at dolores ut dolor sint occaecati similique.
@@ -67,11 +67,11 @@ const SingleEventCard = ({ description }) => {
         </div>
 
         {/* Event Condent */}
-        <div className="max-w-xl">
-          <h3 className="pt-12 pb-3 text-3xl font-shippori font-extrabold ">
+        <div className='max-w-xl'>
+          <h3 className='pt-12 pb-3 text-3xl font-shippori font-extrabold '>
             Details about the Event{' '}
           </h3>
-          <p className="text-gray-dark text-xl font-normal">
+          <p className='text-gray-dark text-xl font-normal'>
             Veniam quae. Nostrum facere repellendus minus quod aut aliquam neque
             reiciendis. Qui beatae vel magnam repudiandae ipsum repellat
             repudiandae. Voluptate at dolores ut dolor sint occaecati similique.

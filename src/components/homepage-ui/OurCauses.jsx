@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import School from '../../assets/build_school.png';
 import Aid from '../../assets/medical_aid.png';
 import Water from '../../assets/safe_water.png';
@@ -44,6 +45,7 @@ const cardDummyData = [
 ];
 
 function OurCauses() {
+  const navigate = useNavigate();
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -68,22 +70,22 @@ function OurCauses() {
     <section className="container m-4 md:mt-36 mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between mb-4">
         <SectionHeading
-          heading="Our Causes"
-          title="You can help lots of people by donating little."
+          heading='Our Causes'
+          title='You can help lots of people by donating little.'
         />
-        <Button text="MORE CAUSES" bgColor="primary" onClick={() => {}} />
+        <Button text='MORE CAUSES' bgColor='primary' onClick={() => { navigate('/donate') }} />
       </div>
 
       {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10"> */}
       <Carousel responsive={responsive}>
         {cardDummyData.map((card) => (
-          <div key={card.id} className="flex">
+          <div key={card.id} className='flex'>
             <CauseCard {...card} key={card.id} />
           </div>
         ))}
       </Carousel>
       {/* </div> */}
-    </section>
+    </section >
   );
 }
 

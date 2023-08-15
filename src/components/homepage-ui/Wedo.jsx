@@ -53,22 +53,22 @@ const wedoCardData = [
 
 const Wedo = () => {
   return (
-    <section className="px-4 py-8  sm:px-8 md:px-16 lg:px-24 xl:px-32">
+    <section className='px-4 py-8  sm:px-8 md:px-16 lg:px-24 xl:px-32'>
       {/* Top section */}
-      <div className="text-center">
+      <div className='text-center'>
         <SectionHeading
-          heading="What we do"
-          title="We do it for People in Need"
+          heading='What we do'
+          title='We do it for People in Need'
         />
       </div>
 
       {/* Bottom section */}
-      <div className="flex flex-wrap gap-4 mt-5 sm:gap-6 md:gap-8 lg:gap-10">
+      <div className='flex flex-wrap gap-4 mt-5 sm:gap-6 md:gap-8 lg:gap-10'>
         {wedoCardData.slice(0, 3).map((card) => (
           <WedoCard {...card} key={card.id} />
         ))}
       </div>
-      <div className="flex flex-wrap py-6 gap-4 mt-5 sm:gap-6 md:gap-8 lg:gap-10">
+      <div className='flex flex-wrap py-6 gap-4 mt-5 sm:gap-6 md:gap-8 lg:gap-10'>
         {wedoCardData.slice(3, 6).map((card) => (
           <WedoCard {...card} key={card.id} />
         ))}

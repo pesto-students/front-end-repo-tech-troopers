@@ -13,25 +13,25 @@ const Newsletter = () => {
         <h5 className="text-dark font-shippori text-4xl font-extrabold">
           Get in Touch With Us
         </h5>
-        <p className="font-work text-white font-normal  leading-6 text-sm md:text-xl">
+        <p className='font-work text-white font-normal  leading-6 text-sm md:text-xl'>
           "We're carrying out additional patrols to prevent offences from taking
           place and I'd ask anyone who sees any suspicious or unusual activity
           in their neighbourhood or who has information to get in touch with
           us."
         </p>
 
-        <div className="flex flex-col py-4 space-y-6 ">
+        <div className='flex flex-col py-4 space-y-6 '>
           {/* Icon */}
           <div className="flex space-x-5">
             <EnvelopeIcon className="h-16 w-16  text-primary bg-white rounded-full px-2 py-2" />
             <div className="flex space-y-1 flex-col">
               {/* message */}
-              <h3 className="text-dark font-shippori text-2xl font-extrabold">
+              <h3 className='text-dark font-shippori text-2xl font-extrabold'>
                 Email
               </h3>
 
               {/* contact */}
-              <span className="font-work text-white font-normal  leading-6 text-sm md:text-lg">
+              <span className='font-work text-white font-normal  leading-6 text-sm md:text-lg'>
                 pesto@health.com
               </span>
             </div>
@@ -41,12 +41,12 @@ const Newsletter = () => {
             <PhoneIcon className="h-16 w-16  text-primary bg-white rounded-full px-2 py-2" />
             <div className="flex space-y-1 flex-col">
               {/* message */}
-              <h3 className="text-dark font-shippori text-2xl font-extrabold">
+              <h3 className='text-dark font-shippori text-2xl font-extrabold'>
                 Contact Us
               </h3>
 
               {/* contact */}
-              <span className="font-work text-white font-normal  leading-6 text-sm md:text-lg">
+              <span className='font-work text-white font-normal  leading-6 text-sm md:text-lg'>
                 222 888 0000
               </span>
             </div>
@@ -58,7 +58,7 @@ const Newsletter = () => {
           <h2 className="text-dark font-shippori text-2xl font-extrabold">
             Follow us on Social Media
           </h2>
-          <p className="font-work text-white font-normal  leading-6 text-sm md:text-lg">
+          <p className='font-work text-white font-normal  leading-6 text-sm md:text-lg'>
             Care about people to transforming their lives and exudes a
             positives.
           </p>
@@ -69,33 +69,33 @@ const Newsletter = () => {
             <img src={Pintrest} alt="" />
           </div>
         </div>
-      </div>
+      </div >
 
       {/* section right */}
-      <form className="flex w-[600px] bg-white pt-5 border md:py-10 flex-col items-center space-y-5">
+      < form className="flex w-[600px] bg-white pt-5 border md:py-10 flex-col items-center space-y-5" >
         <input
-          type="name"
-          placeholder="Enter your Name"
-          className="w-3/4 md:w-96 h-10 md:h-16 bg-gray-50  px-4 outline-none"
+          type='name'
+          placeholder='Enter your Name'
+          className='w-3/4 md:w-96 h-10 md:h-16 bg-gray-50  px-4 outline-none'
         />
         <input
-          type="number"
-          placeholder="Phone Number"
-          className="w-3/4 md:w-96 h-10 md:h-16 bg-gray-50  px-4 outline-none"
+          type='number'
+          placeholder='Phone Number'
+          className='w-3/4 md:w-96 h-10 md:h-16 bg-gray-50  px-4 outline-none'
         />
 
         <input
-          type="email"
-          placeholder="Enter your Email"
-          className="w-3/4 md:w-96 h-10 md:h-16 bg-gray-50  px-4 outline-none"
+          type='email'
+          placeholder='Enter your Email'
+          className='w-3/4 md:w-96 h-10 md:h-16 bg-gray-50  px-4 outline-none'
         />
         <textarea
-          className="w-3/4 md:w-96 h-24 md:h-32 bg-gray-50  px-4 outline-none p-4"
-          placeholder="Enter your Message"
+          className='w-3/4 md:w-96 h-24 md:h-32 bg-gray-50  px-4 outline-none p-4'
+          placeholder='Enter your Message'
         />
-        <Button text="SUBMIT" bgColor="#2E4049" />
-      </form>
-    </div>
+        <Button text='SUBMIT' bgColor='#2E4049' />
+      </form >
+    </div >
   );
 };
 

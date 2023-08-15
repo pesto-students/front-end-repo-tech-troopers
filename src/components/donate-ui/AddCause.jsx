@@ -24,11 +24,10 @@ function AddCause({ closeModal }) {
   };
 
   const setImageUrl = (url) => {
-    console.log({ url });
+    ;
     imageURL.current = url;
   };
 
-  console.log({ imageURL });
 
   return (
     <div className="relative flex flex-col justify-center  overflow-hidden">
@@ -47,7 +46,7 @@ function AddCause({ closeModal }) {
             />
           </div>
           <div className="mb-2">
-            <FileUploadButton returnImage={setImageUrl} />
+
           </div>
 
           <div className="mb-2">
@@ -68,7 +67,9 @@ function AddCause({ closeModal }) {
               placeholder="Resource Description*"
             />
           </div>
-          <div className="mt-6 text-center">
+          <div className="mt-6 text-center flex space-x-4">
+            <FileUploadButton returnImage={setImageUrl} />
+
             <Button
               onClick={addCause}
               text="ADD CAUSE"

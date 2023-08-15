@@ -7,27 +7,27 @@ const CauseCard = ({ image, cardTitle, raisedAmt, goalAmt, percentRaised }) => {
       <img
         src={image}
         alt={cardTitle}
-        className="h-[260px] sm:h-[360px] object-cover w-full"
+        className='h-[260px] sm:h-[360px] object-cover w-full'
       />
 
-      <div className="flex flex-col space-y-3 mx-6">
-        <h3 className="font-bold text-xl sm:text-2xl text-dark">{cardTitle}</h3>
+      <div className='flex flex-col space-y-3 mx-6'>
+        <h3 className='font-bold text-xl sm:text-2xl text-dark'>{cardTitle}</h3>
         <progress
           value={percentRaised}
-          max="100"
-          className="h-1 rounded-lg w-full"
+          max='100'
+          className='h-1 rounded-lg w-full'
         />
 
-        <div className="flex items-center justify-between">
-          <p className="text-dark text-base sm:text-lg font-bold">
+        <div className='flex items-center justify-between'>
+          <p className='text-dark text-base sm:text-lg font-bold'>
             Raised - {raisedAmt}
           </p>
-          <p className="text-primary text-base sm:text-lg font-bold">
+          <p className='text-primary text-base sm:text-lg font-bold'>
             Goal - {goalAmt}
           </p>
         </div>
 
-        <Button text="DONATE" />
+        <Button text='DONATE' />
       </div>
     </div>
   );

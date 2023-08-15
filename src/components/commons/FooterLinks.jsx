@@ -1,28 +1,29 @@
+import { Link } from "react-router-dom";
 const footerDummyData = [
   {
     id: 1,
     title: 'About Us',
-    path: '/',
+    path: '/aboutus',
   },
   {
     id: 2,
     title: 'Volunteer',
-    path: '/',
+    path: '/volunteer',
   },
   {
     id: 3,
     title: 'Events',
-    path: '/',
+    path: '/events',
   },
   {
     id: 4,
     title: 'Donate',
-    path: '/',
+    path: '/donate',
   },
   {
     id: 5,
     title: 'Team',
-    path: '/',
+    path: '/volunteer',
   },
 ];
 
@@ -68,7 +69,7 @@ const FooterLinks = ({ id, title }) => {
               key={id}
               className='text-white font-work text-sm md:text-lg font-medium leading-3 cursor-pointer hover:text-primary'
             >
-              {item.title}
+              <Link to={item.path}>{item.title}</Link>
             </li>
           ))}
         </ul>
