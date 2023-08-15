@@ -45,7 +45,7 @@ const OurEvents = () => {
         <Button text="More Events" bgColor="#FF6D6D" textColor="#fff" />
       </div>
 
-      <div className="flex items-start justify-between mt-7">
+      <div className="flex flex-col md:flex-row items-start justify-between mt-7">
         <EventCard />
         <div className="flex flex-col space-y-6">
           {eventData.map((event) => (
