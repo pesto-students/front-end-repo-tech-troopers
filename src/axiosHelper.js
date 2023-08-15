@@ -8,19 +8,6 @@ const axiosInstance = axios.create({
   },
 });
 
-// Optional: You can add an interceptor for request modifications, e.g., adding authentication tokens.
-axiosInstance.interceptors.request.use(
-  (config) => {
-    // Add any headers or tokens to the request config if needed
-    // For example:
-    // config.headers['Authorization'] = 'Bearer ' + YOUR_AUTH_TOKEN;
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
-
 // Optional: You can add an interceptor for handling response errors globally.
 axiosInstance.interceptors.response.use(
   (response) => {

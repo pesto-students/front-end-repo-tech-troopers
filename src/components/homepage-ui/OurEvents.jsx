@@ -2,6 +2,7 @@ import SectionHeading from '../sectionHeading/SectionHeading';
 import Button from '../ui/Button/Button';
 import EventCard from './EventCard';
 import MoreEventsCard from './MoreEventsCard';
+import { useNavigate } from 'react-router-dom';
 
 const eventData = [
   {
@@ -34,6 +35,7 @@ const eventData = [
 ];
 
 const OurEvents = () => {
+  const navigate = useNavigate();
   return (
     <section className="flex flex-col justify-start m-4 md:mt-36 md:mx-36">
       {/* Section Top */}
@@ -42,10 +44,10 @@ const OurEvents = () => {
           heading="Our Events"
           title="Join Upcoming Events Replays & Webinars"
         />
-        <Button text="More Events" bgColor="#FF6D6D" textColor="#fff" />
+        <Button text="More Events" bgColor="#FF6D6D" textColor="#fff" onClick={() => { navigate('/events') }} />
       </div>
 
-      <div className="flex items-start justify-between mt-7">
+      <div className="flex flex-col md:flex-row items-start justify-between mt-7">
         <EventCard />
         <div className="flex flex-col space-y-6">
           {eventData.map((event) => (

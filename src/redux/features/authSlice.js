@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { signupuser, signinuser, addngodetails, toggleresourcestatus, togglevolunteerstatus } from './authActions';
+import {
+  signupuser, signinuser, addngodetails, toggleresourcestatus, togglevolunteerstatus,
+} from './authActions';
 
 const initialState = {
   loading: false,
@@ -8,7 +10,7 @@ const initialState = {
   isLoggedIn: false, // for storing the JWT
   error: null,
   success: false,
-  registration: false // for monitoring the registration process.
+  registration: false, // for monitoring the registration process.
 };
 
 const userToken = localStorage.getItem('userToken')
@@ -56,8 +58,7 @@ const authSlice = createSlice({
     },
     [addngodetails.fulfilled]: (state, { payload }) => {
       state.loading = false;
-      state.address = payload.address;
-      state.ngoDetails = payload.ngoDetails;
+      state.userInfo = payload;
       state.registration = true;
     },
     [addngodetails.rejected]: (state, { payload }) => {
@@ -65,14 +66,14 @@ const authSlice = createSlice({
       state.error = payload;
     },
     [toggleresourcestatus.fulfilled]: (state, { payload }) => {
-      togglevolunteerstatus
+      togglevolunteerstatus;
       state.loading = false;
 
       if (payload.action === 'APPROVE') {
         state.userInfo.resources.push(payload.resourceID);
       } else if (payload.action === 'ACTIVE') {
         state.userInfo.resources = state.userInfo.resources.filter(
-          (resourceId) => resourceId !== payload.resourceID
+          (resourceId) => resourceId !== payload.resourceID,
         );
       }
     },
@@ -86,16 +87,13 @@ const authSlice = createSlice({
       state.error = null;
     },
     [togglevolunteerstatus.fulfilled]: (state, { payload }) => {
-
       state.loading = false;
 
       if (payload.action === 'add') {
         state.userInfo.voluntary = [...state.userInfo.voluntary, payload.volunteerId];
-
-
       } else if (payload.action === 'remove') {
         state.userInfo.voluntary = state.userInfo.voluntary.filter(
-          (id) => id !== payload.volunteerId
+          (id) => id !== payload.volunteerId,
         );
       }
     },

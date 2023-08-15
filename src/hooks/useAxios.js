@@ -10,7 +10,7 @@ const useAxios = () => {
     setLoading(true);
     setError(null);
     const BASE_URL = 'https://brighter-days.onrender.com/api';
-    let url = `${BASE_URL}/${endpoint}`;
+    const url = `${BASE_URL}/${endpoint}`;
 
     try {
       const response = await axios({
@@ -41,7 +41,13 @@ const useAxios = () => {
     await fetchData(endpoint, 'DELETE');
   };
 
-  return { data, loading, error, fetchData, postData, patchData, deleteData };
+  const putData = async (endpoint, requestBody) => {
+    await fetchData(endpoint, 'PUT', requestBody);
+  };
+
+  return {
+    data, loading, error, fetchData, postData, patchData, deleteData, putData
+  };
 };
 
 export default useAxios;

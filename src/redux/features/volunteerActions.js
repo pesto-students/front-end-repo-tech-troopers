@@ -1,57 +1,58 @@
-import axiosHelper from '../../axiosHelper';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import axiosHelper from '../../axiosHelper';
 
 const CONFIG = {
-    headers: {
-        'Content-Type': 'application/json',
-    },
+  headers: {
+    'Content-Type': 'application/json',
+    'x-auth-token': `${localStorage.getItem('userToken')}`
+  },
 };
 
-export const fetchvolunteersuser = createAsyncThunk(
-    'volunteers/fetchvolunteersuser', // Provide a unique action name
-    async (_, { rejectWithValue }) => { // You're not using the first parameter, so use "_"
-        try {
-            // Modify queryParams if needed
-
-            const data = await axiosHelper.get(
-                '/voluntary',
-                {
-                    // You can add request options here
-                },
-                CONFIG
-            );
-            return data;
-        } catch (error) {
-            if (error.response && error.response.data.message) {
-                return rejectWithValue(error.response.data.message);
-            } else {
-                return rejectWithValue(error.message);
-            }
-        }
-    }
-);
-
 export const fetchvolunteersadmins = createAsyncThunk(
-    'volunteers/fetchvolunteersadmins',
-    async ({ userId }, { rejectWithValue }) => {
-        try {
-            const queryParams = {};
-            queryParams.userId = userId;
+  '/voluntary/admin',
+  async ({ }, { rejectWithValue }) => {
+    try {
+      const queryParams = {};
 
-
-            const data = await axiosHelper.get(
-                '/voluntary/admin',
-                {
-                    params: queryParams,
-                },
-                CONFIG
-            );
-            return data;
-        } catch (error) {
-            return rejectWithValue(error.response.data);
-        }
+      const data = await axiosHelper.get(
+        '/voluntary/admin',
+        {
+          params: queryParams,
+        },
+        CONFIG,
+      );
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
     }
-
+  },
 );
-
+export const fetchvolunteersuser = createAsyncThunk(
+  'uservolunteers', // Provide a unique action name
+  async ({ search, filter }, { rejectWithValue }) => { // You're not using the first parameter, so use "_"
+    try {
+      // Modify queryParams if needed
+      const queryParams = {};
+      if (search) {
+        queryParams.search = search;
+      }
+      if (filter) {
+        queryParams.filter = filter;
+      }
+      const data = await axiosHelper.get(
+        '/voluntary',
+        {
+          params: queryParams,
+        },
+        CONFIG,
+      );
+      return data;
+    } catch (error) {
+      if (error.response && error.response.data.message) {
+        return rejectWithValue(error.response.data.message);
+      }
+      return rejectWithValue(error.message);
+    }
+  },
+);
 

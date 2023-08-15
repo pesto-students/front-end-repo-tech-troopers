@@ -7,10 +7,10 @@ const SearchElement = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const delayedSearch = _.debounce((query) => {
-    if (query.length > 3) {
-      onSearch(query);
-    }
-  }, 300);
+    // if (query.length > 3) {
+    onSearch(query);
+    // }
+  }, 1000);
 
   const handleSearch = (event) => {
     const { value } = event.target;
@@ -19,17 +19,24 @@ const SearchElement = ({ onSearch }) => {
   };
 
   return (
-    <InputGroup size="md" my={3} bg="white" className='w-[850px] mx-auto mt-16 mb-6 max-w-6xl'> {/* Add margin on top and bottom */}
+    <InputGroup
+      size='md'
+      my={3}
+      bg='white'
+      className='w-[850px] mx-auto mt-16 mb-6 max-w-6xl'
+    >
+      {' '}
+      {/* Add margin on top and bottom */}
       <Input
-        placeholder="Search..."
+        placeholder='Search...'
         value={searchQuery}
         onChange={handleSearch}
-        pr="4.5rem"
-        variant="outline"
+        pr='4.5rem'
+        variant='outline'
         className='bg-white'
       />
-      <InputRightElement width="4.5rem" height="100%">
-        <SearchIcon color="gray.300" />
+      <InputRightElement width='4.5rem' height='100%'>
+        <SearchIcon color='gray.300' />
       </InputRightElement>
     </InputGroup>
   );

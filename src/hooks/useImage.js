@@ -10,8 +10,8 @@ const useBackgroundImage = (imageUrl) => {
     // Update window width when the window is resized
     const handleResize = () => {
       if (
-        window.innerWidth <= 500 &&
-        backgroundStyle.backgroundColor !== 'white'
+        window.innerWidth <= 500
+        && backgroundStyle.backgroundColor !== 'white'
       ) {
         setBackgroundStyle({
           backgroundColor: 'white',

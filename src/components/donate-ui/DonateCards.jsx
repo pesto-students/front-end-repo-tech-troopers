@@ -3,75 +3,88 @@ import Aid from '../../assets/medical_aid.png';
 import Water from '../../assets/safe_water.png';
 import Rights from '../../assets/human_rights.png';
 import DonateCard from './DonateCard';
+import AddCause from './AddCause';
 import useAxios from '../../hooks/useAxios';
-import { useEffect } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import { Fragment, useState, useEffect } from 'react';
+import { SpinnerCircular } from 'spinners-react';
 
-// const cardDummyData = [
-//   {
-//     id: 1,
-//     image: School,
-//     cardTitle: 'Big charity: build school for poor children',
-//     raisedAmt: '5M',
-//     goalAmt: '10M',
-//     percentRaised: '50',
-//   },
-//   {
-//     id: 2,
-//     image: Aid,
-//     cardTitle: 'Big charity: build school for poor children',
-//     raisedAmt: '5M',
-//     goalAmt: '10M',
-//     percentRaised: '50',
-//   },
-//   {
-//     id: 3,
-//     image: Water,
-//     cardTitle: 'Big charity: build school for poor children',
-//     raisedAmt: '5M',
-//     goalAmt: '10M',
-//     percentRaised: '50',
-//   },
-//   {
-//     id: 4,
-//     image: Water,
-//     cardTitle: 'Big charity: build school for poor children',
-//     raisedAmt: '5M',
-//     goalAmt: '10M',
-//     percentRaised: '50',
-//   },
-//   {
-//     id: 5,
-//     image: Water,
-//     cardTitle: 'Big charity: build school for poor children',
-//     raisedAmt: '5M',
-//     goalAmt: '10M',
-//     percentRaised: '50',
-//   },
-//   {
-//     id: 6,
-//     image: Water,
-//     cardTitle: 'Big charity: build school for poor children',
-//     raisedAmt: '5M',
-//     goalAmt: '10M',
-//     percentRaised: '50',
-//   },
-// ];
-
-function DonateCards() {
+function DonateCards({ openModal }) {
   const { data, loading, error, fetchData } = useAxios();
+  let [isOpen, setIsOpen] = useState(false);
+
+  const role = localStorage.getItem('userRole');
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
 
   useEffect(() => {
     fetchData('cause');
   }, []);
 
-  console.log(data?.causeList);
   return (
-    <section className="p-10 w-full bg-gray-50">
-      <div className="flex items-center flex-wrap justify-around space-y-5">
-        {data?.causeList?.map((card) => (
-          <DonateCard {...card} key={card._id} />
-        ))}
-      </div>
+    <section className="relative p-10 w-full bg-gray-50">
+      {loading ? (
+        <div className="flex items-center justify-center mt-10">
+          <SpinnerCircular color={'#FF6D6D'} size={100} />
+        </div>
+      ) : (
+        <div className="flex items-center flex-wrap justify-around space-y-5">
+          {data?.causeList?.map((card) => (
+            <DonateCard {...card} key={card._id} />
+          ))}
+        </div>
+      )}
+      {role !== 'USER' && data ? (
+        <div
+          onClick={openModal}
+          className="absolute w-full bottom-10 left-[90%]"
+        >
+          <span className="p-4 bg-primary h-16 w-16 rounded-full text-white text-3xl font-extrabold flex items-center justify-center">
+            +
+          </span>
+        </div>
+      ) : null}
+
+      <Transition appear show={isOpen} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+          <div className="fixed inset-0 bg-primary/25" />
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-primary bg-opacity-25" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-[110vh] items-center justify-center p-4 text-center z-50">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-gray-50 p-6 text-left align-middle shadow-xl transition-all">
+                  <AddCause closeModal={closeModal} />
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
     </section>
   );
 }
