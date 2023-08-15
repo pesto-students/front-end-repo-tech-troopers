@@ -26,7 +26,7 @@ const EventsDetails = () => {
     >
       <Navbar />
       <Banner />
-      <SingleEventCard description={eventDetails.description} />
+      <SingleEventCard description={eventDetails?.description} />
       <Footer />
     </motion.div>
   );

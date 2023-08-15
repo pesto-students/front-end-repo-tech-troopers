@@ -31,7 +31,7 @@ const Discover = () => {
           }}
           className={`w-48 h-56 md:h-80 py-6 md:py-16 px-3 md:w-96 md:px-10`}
         >
-          <h2 className=" font-shippori text-lg md:text-4xl -mt-10 font-extrabold leading-1">
+          <h2 className=" font-shippori text-lg md:text-4xl sm:-mt-6 md:-mt-10 font-extrabold leading-1">
             {item.title}
           </h2>
           <p className="pt-4 pb-5  font-work text-xs md:text-xl font-normal leading-6">

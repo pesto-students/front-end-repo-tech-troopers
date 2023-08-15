@@ -22,7 +22,7 @@ function AddCause({ closeModal }) {
   return (
     <div className="relative flex flex-col justify-center  overflow-hidden">
       <div className="w-full p-6  bg-transparent rounded-md lg:max-w-xl">
-        <h1 className="text-4xl text-dark font-ellen font-normal leading-9">
+        <h1 className="text-4xl text-primary font-ellen font-normal leading-9">
           Add a new cause.
         </h1>
         <form className="mt-6">

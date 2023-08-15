@@ -5,15 +5,15 @@ import Hand from '../../assets/hour_hand.png';
 
 const EventCard = ({ image, cardTitle, cardDesc }) => {
   return (
-    <div className="max-w-xl">
+    <div className="max-w-xl mb-4 md:mb-0">
       <div className="relative">
         <img src={Education} className="object-cover" alt="" />
-        <h3 className="absolute w-[116px] top-0 left-0 bg-primary text-white font-shippori text-center text-5xl px-4 py-5 z-10">
-          18 <span className="text-white text-4xl">June</span>
+        <h3 className="absolute w-20 md:w-[116px] top-0 left-0 bg-primary text-white font-shippori text-center text-3xl md:text-5xl px-4 py-5 z-10">
+          18 <span className="text-white text-xl md:text-4xl">June</span>
         </h3>
       </div>
 
-      <div className="flex items-center space-x-4 my-4 text-lg">
+      <div className="flex items-center space-x-4 my-4 text-md md:text-lg">
         <p className="text-gray-dark font-work font-normal">
           Organized By:{' '}
           <span className="text-dark font-medium font-work">Jane Doe</span>
@@ -32,10 +32,10 @@ const EventCard = ({ image, cardTitle, cardDesc }) => {
       <hr className="border-b border-gray-dark" />
 
       <div className="flex flex-col space-y-2 mt-2">
-        <h5 className="text-dark font-extrabold font-shippori text-3xl">
+        <h5 className="text-dark font-extrabold font-shippori text-xl md:text-3xl">
           Education for Poor Children
         </h5>
-        <p className="text-gray-dark text-lg bg-white font-shippori">
+        <p className="text-gray-dark text-sm md:text-lg bg-white font-shippori">
           There are many varieations of passages of injected Lorem Ipsum
           available,but the majority have.
         </p>

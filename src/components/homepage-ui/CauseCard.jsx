@@ -1,9 +1,9 @@
-import React from "react";
-import Button from "../ui/Button/Button";
+import React from 'react';
+import Button from '../ui/Button/Button';
 
 const CauseCard = ({ image, cardTitle, raisedAmt, goalAmt, percentRaised }) => {
   return (
-    <div className="w-[100%] sm:w-[437px] font-shippori space-y-5 shadow-xl pb-3">
+    <div className="w-[100%] sm:w-[437px] font-shippori space-y-5 shadow-xl pb-3 mr-6">
       <img
         src={image}
         alt={cardTitle}
