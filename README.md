@@ -26,7 +26,7 @@ Please Note:
 <br/>
 Test Credentials:
 
-- For USer
+- For User
   - Email: akshayurankar48@gmail.com
   - Password: 123456
 - For NGO User
