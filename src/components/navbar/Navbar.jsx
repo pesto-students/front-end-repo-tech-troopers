@@ -54,13 +54,15 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
 
   const navigate = useNavigate();
-  const { isLoggedIn } = useSelector((state) => state.auth);
+
+  const { _id } = useSelector((state) => state.auth.userInfo);
 
   const handleLogout = () => {
     localStorage.clear();
-    navigate('/');
+    navigate('/signin');
     window.location.reload();
   };
+
   return (
     <nav className="w-full flex items-center py-5 fixed top-0 z-20 bg-white shadow-md h-20">
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -91,8 +93,8 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {isLoggedIn ? (
-          <>
+        {_id !== null ? (
+          <div className="hidden sm:block">
             <Box position="relative">
               <IconButton
                 icon={
@@ -139,7 +141,7 @@ const Navbar = () => {
                 </MenuList>
               </Menu>
             </Box>
-          </>
+          </div>
         ) : (
           <div className="hidden md:block">
             <Button
@@ -153,13 +155,28 @@ const Navbar = () => {
         )}
 
         <div className="sm:hidden flex flex-1 justify-end items-center pr-7">
-          <Button
-            text="LOGIN"
-            bgColor="#FF6D6D"
-            onClick={() => {
-              navigate('/signin');
-            }}
-          />
+          {_id !== null ? (
+            <Box position="relative">
+              <IconButton
+                icon={
+                  <FaRegUserCircle className="text-primary text-xl sm:text-2xl md:text-3xl lg:text-4xl" />
+                }
+                variant="ghost"
+                onClick={() => {
+                  handleLogout();
+                  setIsMenuOpen(!isMenuOpen);
+                }}
+              />
+            </Box>
+          ) : (
+            <Button
+              text="LOGIN"
+              bgColor="#FF6D6D"
+              onClick={() => {
+                navigate('/signin');
+              }}
+            />
+          )}
           <img
             src={toggle ? close : menu}
             alt="menu"

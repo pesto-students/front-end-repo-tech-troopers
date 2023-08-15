@@ -17,6 +17,8 @@ const DonateCard = ({
     navigate(`${_id}`);
   };
 
+  console.log({ imageURL });
+
   return (
     <div className="shadow-lg">
       <div className="w-[400px] h-[350px]">
