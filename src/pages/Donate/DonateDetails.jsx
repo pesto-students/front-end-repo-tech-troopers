@@ -19,7 +19,6 @@ const DonateDetails = () => {
   }, []);
 
   const detailsData = data?.causeData;
-  console.log({ data });
 
   return (
     <motion.div

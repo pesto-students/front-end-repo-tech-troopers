@@ -25,7 +25,6 @@ const discoverDummyData = [
 ];
 
 const SingleEventCard = ({ description, title, imageURL, _id }) => {
-  console.log({ title, description });
 
   return (
     <section className='flex px-6 items-center justify-center py-6'>
