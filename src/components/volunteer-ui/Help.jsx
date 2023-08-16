@@ -4,27 +4,27 @@ import Button from '../ui/Button/Button';
 const helpDummyData = [
   {
     id: 1,
-    cardTitle: 'Create a personal profile',
+    cardTitle: 'Passion and Alignment',
     cardDesc:
-      'Veniam quae. Nostrum facere repellendus minus quod aut neque reiciendis.',
+      'The mission and values align with your passions and interests.',
   },
   {
     id: 2,
-    cardTitle: 'Add your organization',
+    cardTitle: 'Initiative and Creativity',
     cardDesc:
-      'Veniam quae. Nostrum facere repellendus minus quod aut neque reiciendis.',
+      'Volunteers who show initiative and bring creative ideas to the table.',
   },
   {
     id: 3,
-    cardTitle: 'Add volunteer opportunities',
+    cardTitle: 'Impact and Reflection:',
     cardDesc:
-      'Veniam quae. Nostrum facere repellendus minus quod aut neque reiciendis.',
+      'Keep track of the changes you help bring about, and share these stories to inspire others to get involved.',
   },
   {
     id: 4,
-    cardTitle: 'You are ready to recruit',
+    cardTitle: 'Long-Term Commitment',
     cardDesc:
-      'Veniam quae. Nostrum facere repellendus minus quod aut neque reiciendis.',
+      'Long-term volunteers often have a more profound impact due to their accumulated knowledge and experience.',
   },
 ];
 
@@ -42,12 +42,7 @@ const Help = ({ volunteers, handleToggleInterest, buttonText }) => {
           title='Need Your Heartful Help'
         />
         <p className='text-gray-dark font-work text-xl max-w-2xl font-normal pt-6'>
-          Lorem Ipsum is simply dummy text of the printin typesetting dummy text
-          ever when an unknown printer took a galley of type and scrambled it to
-          make a type specimen book. Bring to the table win-win survival
-          strategies to proactive domination. is on the runway heading towards a
-          streamlined cloud solution. User gener eal-time will have multiple
-          touch points for offshoring
+          Join our vibrant community of volunteers and make a positive impact! At Brighter Days, we believe in the power of collective action to create meaningful change. As a volunteer, you'll have the opportunity to contribute your skills, time, and passion to a variety of projects and initiatives that align with our mission. Whether you're interested in environmental conservation, education, community outreach, or event planning, we have a place for you.
         </p>
 
         {helpDummyData.map((item, id) => (
