@@ -11,14 +11,12 @@ const EventsDetails = () => {
   const { data, loading, error, fetchData } = useAxios();
   const { id } = useParams();
 
-  console.log({ id });
 
   useEffect(() => {
     fetchData(`event/${id}`);
   }, []);
 
   const eventDetails = data?.eventData;
-  console.log({ data });
 
   return (
     <motion.div

@@ -15,7 +15,6 @@ const EventCard = ({
   onClick,
 }) => {
   let { day, month } = getDayAndMonth(date);
-  console.log({ day });
 
   const handleClick = () => {
     onClick(_id);
