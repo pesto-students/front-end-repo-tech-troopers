@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../ui/Button/Button';
 import { useNavigate } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const DonateCard = ({
   _id,
@@ -20,7 +21,7 @@ const DonateCard = ({
   return (
     <div className='shadow-lg'>
       <div className='w-[400px] '>
-        <img src={imageURL} className='object-contain' alt='' />
+        <LazyLoadImage src={imageURL} className='object-contain' alt='' />
       </div>
 
       <div className='bg-white p-4 space-y-4'>

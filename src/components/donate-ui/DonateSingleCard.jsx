@@ -23,7 +23,7 @@ const DonateSingleCard = ({
       </div>
 
       {/* Our Mission  */}
-      <div className='max-w-xl'>
+      {/* <div className='max-w-xl'>
         <h3 className='pt-12 pb-3 text-3xl font-shippori font-extrabold '>
           Our Mission{' '}
         </h3>
@@ -33,9 +33,9 @@ const DonateSingleCard = ({
           repudiandae. Voluptate at dolores ut dolor sint occaecati similique.
           Velit eius ab delectus temporibus.
         </p>
-      </div>
+      </div> */}
 
-      {/* Details about the cause  */}
+      {/* Details about the cause 
       <div className='max-w-lg'>
         <h3 className='pt-12 pb-3 text-3xl font-shippori font-extrabold '>
           Details about the cause{' '}
@@ -46,7 +46,7 @@ const DonateSingleCard = ({
           repudiandae. Voluptate at dolores ut dolor sint occaecati similique.
           Velit eius ab delectus temporibus.
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };
