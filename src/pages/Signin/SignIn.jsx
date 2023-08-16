@@ -92,10 +92,9 @@ const SignIn = () => {
             <CardBody align='center'>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <VStack spacing='10rem'>
-                  <div className='self-stretch relative text-[1.25rem] leading-[130%] font-work text-gray-dark text-center'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua quis.
+                  <div className='relative text-md leading-[130%] font-work -mt-6 text-gray-dark text-center max-w-lg'>
+                    Sign in to your account and continue making a positive
+                    impact in the lives of those who need it most.
                   </div>
                 </VStack>
 
@@ -111,7 +110,9 @@ const SignIn = () => {
                     autoFocus={true}
                     {...register('email')}
                   />
-                  <FormErrorMessage>{errors.email?.message}</FormErrorMessage>
+                  <div className='mx-32'>
+                    <FormErrorMessage>{errors.email?.message}</FormErrorMessage>
+                  </div>
                 </FormControl>
                 <VStack spacing={4}>
                   <FormControl id='password' isInvalid={!!errors.password}>
@@ -125,9 +126,11 @@ const SignIn = () => {
                       style={{ backgroundColor: 'white' }}
                       {...register('password')}
                     />
-                    <FormErrorMessage>
-                      {errors.password?.message}
-                    </FormErrorMessage>
+                    <div className='mx-32'>
+                      <FormErrorMessage>
+                        {errors.password?.message}
+                      </FormErrorMessage>
+                    </div>
                   </FormControl>
                 </VStack>
 
