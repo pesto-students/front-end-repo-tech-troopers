@@ -63,15 +63,14 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { isLoggedIn } = useSelector((state) => state.auth);
   const clearStores = () => {
-    dispatch(resetStoreAuth);
-    dispatch(resetStore);
-    dispatch(resetStoreResources);
-    dispatch(resetStoreNgo);
-    dispatch(resetStoreDonate);
+    dispatch(resetStoreAuth());
+    dispatch(resetStore());
+    dispatch(resetStoreResources());
+    dispatch(resetStoreNgo());
+    dispatch(resetStoreDonate());
   }
 
   const token = localStorage.getItem('userToken');
-  console.log({ token });
 
   const handleLogout = () => {
     localStorage.clear();
