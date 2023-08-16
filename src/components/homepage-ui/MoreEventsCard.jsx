@@ -8,11 +8,16 @@ const MoreEventsCard = ({
   title,
   description,
   ngoName,
+  onClick,
 }) => {
   let { day, month } = getDayAndMonth(date);
 
+  const handleClick = () => {
+    onClick(_id);
+  };
+
   return (
-    <div className='flex space-x-4 cursor-pointer'>
+    <div onClick={handleClick} className='flex space-x-4 cursor-pointer'>
       <div className='text-white text-center font-shippori font-extrabold bg-dark p-2 md:p-4'>
         <p className='text-2xl md:text-5xl'>{day}</p>
         <p className='text-lg md:text-4xl'>{month}</p>

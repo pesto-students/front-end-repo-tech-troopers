@@ -38,6 +38,7 @@ import { useEffect } from 'react';
 
 const OurEvents = () => {
   const { data, loading, error, fetchData } = useAxios();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData('event');
@@ -45,7 +46,10 @@ const OurEvents = () => {
 
   const eventDetails = data?.eventList[0];
 
-  const navigate = useNavigate();
+  const handleClick = (_id) => {
+    navigate(`/events/${_id}`);
+  };
+
   return (
     <section className='flex flex-col justify-start m-4 md:mt-36 md:mx-36'>
       {/* Section Top */}
@@ -71,10 +75,12 @@ const OurEvents = () => {
           imageURL={eventDetails?.imageURL}
           ngoName={eventDetails?.ngoName}
           date={eventDetails?.date}
+          onClick={handleClick}
+          _id={eventDetails?._id}
         />
         <div className='flex flex-col space-y-6'>
-          {data?.eventList?.slice(0, 3).map((event) => (
-            <MoreEventsCard {...event} key={event._id} />
+          {data?.eventList?.slice(1, 4).map((event) => (
+            <MoreEventsCard onClick={handleClick} {...event} key={event._id} />
           ))}
         </div>
       </div>
