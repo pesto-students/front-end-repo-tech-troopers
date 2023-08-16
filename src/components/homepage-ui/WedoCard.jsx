@@ -1,10 +1,11 @@
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const WedoCard = ({ image, cardTitle, cardDesc }) => {
   return (
     <div className='flex flex-col items-center w-80 px-4 sm:w-56 md:w-60 lg:w-80 xl:w-96'>
       {/* Image */}
-      <img src={image} alt={cardTitle} className='h-16 w-16' />
+      <LazyLoadImage src={image} alt={cardTitle} className='h-16 w-16' />
       {/* Card Bottom */}
       <div className='flex flex-col items-center justify-center'>
         <h3 className='text-dark font-shippori text-xl font-extrabold leading-6 pt-3 sm:text-lg md:text-xl'>

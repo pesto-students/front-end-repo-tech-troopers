@@ -1,6 +1,6 @@
 import Tags from './Tags';
-import Water from '../../assets/water.png';
 import Flower from '../../assets/flower.png';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const cardDummyData = [
   {
@@ -52,7 +52,11 @@ const OurGoal = () => {
           healthcare, livelihood, women empowerment.
         </p>
         <div className='relative'>
-          <img src={Flower} alt='' className='h-80 w-96' />
+          <LazyLoadImage
+            src='https://res.cloudinary.com/dhuaafpob/image/upload/v1692187463/flower_geirm4.png'
+            alt=''
+            className='h-80 w-96'
+          />
           <p className='text-dark absolute -bottom-16 font-shippori bg-secondary p-4 flex flex-col items-center max-w-xs ml-5'>
             <span className='text-7xl'>20000+</span>
             <span>Thousand People Helped</span>

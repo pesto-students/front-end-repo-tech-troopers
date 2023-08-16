@@ -1,6 +1,7 @@
 import Button from '../ui/Button/Button';
 import DiscoverBanner from '../../assets/discover.png';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const discoverDummyData = [
   {
@@ -31,10 +32,10 @@ const Discover = () => {
           }}
           className={`w-48 h-56 md:h-80 py-2 md:py-16 px-3 md:w-96 md:px-10`}
         >
-          <h2 className=" font-shippori text-lg md:text-4xl sm:-mt-6 md:-mt-10 font-extrabold leading-1">
+          <h2 className=' font-shippori text-lg md:text-4xl sm:-mt-6 md:-mt-10 font-extrabold leading-1'>
             {item.title}
           </h2>
-          <p className="pt-4 pb-5  font-work text-xs md:text-xl font-normal leading-6">
+          <p className='pt-4 pb-5  font-work text-xs md:text-xl font-normal leading-6'>
             {item.desc}
           </p>
 
@@ -54,7 +55,11 @@ const Discover = () => {
       ))}
 
       <div className='relative h-80 hidden md:inline-block overflow-y-hidden'>
-        <img className='object-contain' src={DiscoverBanner} alt='' />
+        <LazyLoadImage
+          className='object-contain'
+          src='https://res.cloudinary.com/dhuaafpob/image/upload/v1692186337/discover_e9pegt.png'
+          alt=''
+        />
         <div className='absolute inset-0 bg-primary/40' />
       </div>
     </section>
