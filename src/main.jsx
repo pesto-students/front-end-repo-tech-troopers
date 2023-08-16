@@ -6,9 +6,9 @@ import store from './redux/store.js';
 import App from './App.jsx';
 import './index.css';
 
-window.addEventListener('beforeunload', () => {
-  localStorage.clear();
-});
+// window.addEventListener('beforeunload', () => {
+//   localStorage.clear();
+// });
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

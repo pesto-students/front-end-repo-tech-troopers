@@ -5,14 +5,17 @@ import Footer from '../../components/commons/Footer';
 import useAxios from '../../hooks/useAxios';
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useParams } from 'react-router-dom';
 
 const EventsDetails = () => {
   const { data, loading, error, fetchData } = useAxios();
+  const { id } = useParams();
+
+  console.log({ id });
 
   useEffect(() => {
-    fetchData('event');
+    fetchData(`event/${id}`);
   }, []);
-
 
   const eventDetails = data?.eventList[0];
 
@@ -24,7 +27,12 @@ const EventsDetails = () => {
     >
       <Navbar />
       <Banner />
-      <SingleEventCard description={eventDetails?.description} />
+      <SingleEventCard
+        title={eventDetails?.title}
+        description={eventDetails?.description}
+        imageURL={eventDetails?.imageURL}
+        _id={eventDetails?._id}
+      />
       <Footer />
     </motion.div>
   );

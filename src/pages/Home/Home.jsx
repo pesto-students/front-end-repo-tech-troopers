@@ -13,11 +13,22 @@ import OurEvents from '../../components/homepage-ui/OurEvents';
 import Team from '../../components/homepage-ui/Team';
 import Message from '../../components/homepage-ui/Message';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Home = () => {
+  const token = localStorage.getItem('userToken');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (token === null || !token) {
+      navigate('/signin');
+    }
+  }, []);
+
   return (
     <motion.div
-      className="scrollbar-hide"
+      className='scrollbar-hide'
       initial={{ width: 0 }}
       animate={{ width: '100%' }}
       exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}

@@ -16,14 +16,14 @@ const Aboutus = () => {
         </div>
 
         {/* Section bottom */}
-        <div className="flex flex-col w-3/4 text-md md:text-xl">
-          <p className="pb-7 text-gray-dark font-work  font-medium leading-6">
+        <div className='flex flex-col w-3/4 text-md md:text-xl'>
+          <p className='pb-7 text-gray-dark font-work  font-medium leading-6'>
             The management of Brighter Days is deeply committed to providing the
             basic requirements of life to every human being, and facilitate the
             development of overall potential of people physically, mentally, and
             spiritually.
           </p>
-          <p className="pb-7 text-gray-dark font-work font-medium leading-6">
+          <p className='pb-7 text-gray-dark font-work font-medium leading-6'>
             Brighter Days Foundation believes in the spirit of partnership and
             has joined hands with community organization, civic bodies,
             corporate, educational and development institutions, as well as

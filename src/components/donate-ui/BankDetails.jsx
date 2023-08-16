@@ -65,9 +65,9 @@ const BankDetails = () => {
             </p>
           </div>
         ))}
-        <div className='mt-11'>
+        {/* <div className='mt-11'>
           <Button text='COPY ACCOUNT DETAILS' bgColor='#2E4049' />
-        </div>
+        </div> */}
       </div>
     </section>
   );
