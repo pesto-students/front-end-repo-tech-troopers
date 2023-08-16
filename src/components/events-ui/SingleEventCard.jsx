@@ -11,7 +11,7 @@ const discoverDummyData = [
   {
     id: 2,
     title: 'Organizer',
-    desc: 'Jane Doe',
+    desc: 'Brighter Days Foundation',
     backgroundColor: '#2E4049',
     showButton: false,
   },
@@ -24,11 +24,13 @@ const discoverDummyData = [
   },
 ];
 
-const SingleEventCard = ({ description }) => {
+const SingleEventCard = ({ description, title, imageURL, _id }) => {
+  console.log({ title, description });
+
   return (
     <section className='flex px-6 items-center justify-center py-6'>
       <div className='flex flex-col items-center'>
-        <img src={Education} className='bg-cover w-[800px]' alt='' />
+        <img src={imageURL} className='bg-cover w-[800px]' alt='' />
         <div className='flex items-center justify-center -mt-10'>
           {discoverDummyData.map((item, id) => (
             <div key={id} style={{ backgroundColor: item.backgroundColor }}>
@@ -45,45 +47,21 @@ const SingleEventCard = ({ description }) => {
             </div>
           ))}
         </div>
+
         {/* Event Description */}
         <div className='max-w-xl'>
           <h3 className='pt-12 pb-3 text-3xl font-shippori font-extrabold '>
-            Event Description{' '}
+            {title}
           </h3>
-          <p className="text-gray-dark text-xl font-normal">{description}</p>
+          <p className='text-gray-dark text-xl font-normal'>{description}</p>
         </div>
 
-        {/* Event Condent */}
-        <div className='max-w-xl'>
-          <h3 className='pt-12 pb-3 text-3xl font-shippori font-extrabold '>
-            Event Condent{' '}
-          </h3>
-          <p className='text-gray-dark text-xl font-normal'>
-            Veniam quae. Nostrum facere repellendus minus quod aut aliquam neque
-            reiciendis. Qui beatae vel magnam repudiandae ipsum repellat
-            repudiandae. Voluptate at dolores ut dolor sint occaecati similique.
-            Velit eius ab delectus temporibus.
-          </p>
-        </div>
-
-        {/* Event Condent */}
+        {/* Event Description */}
         <div className='max-w-xl'>
           <h3 className='pt-12 pb-3 text-3xl font-shippori font-extrabold '>
             Details about the Event{' '}
           </h3>
-          <p className='text-gray-dark text-xl font-normal'>
-            Veniam quae. Nostrum facere repellendus minus quod aut aliquam neque
-            reiciendis. Qui beatae vel magnam repudiandae ipsum repellat
-            repudiandae. Voluptate at dolores ut dolor sint occaecati similique.
-            Velit eius ab delectus temporibus. Headings, paragraphs,
-            blockquotes, figures, images, and figure captions can all be styled
-            after A rich text element can be used with static or dynamic
-            content. For static content, just drop it into any page and begin
-            editing. ‍ The rich text element allows you to create and format
-            headings, paragraphs, blockquotes, images, and video all in one
-            place instead of having to add and format them individually. Just
-            double-click and easily create content.
-          </p>
+          <p className='text-gray-dark text-xl font-normal'>{description}</p>
         </div>
       </div>
     </section>

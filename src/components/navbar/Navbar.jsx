@@ -56,9 +56,12 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { isLoggedIn } = useSelector((state) => state.auth);
 
+  const token = localStorage.getItem('userToken');
+  console.log({ token });
+
   const handleLogout = () => {
     localStorage.clear();
-    navigate('/');
+    navigate('/signin');
     window.location.reload();
   };
   return (
@@ -84,14 +87,14 @@ const Navbar = () => {
             <li
               key={link.id}
               className='text-dark hover:text-primary text-lg font-medium cursor-pointer'
-            // onClick={() => setActive(link.title)}
+              // onClick={() => setActive(link.title)}
             >
               <Link to={link.path}>{link.title}</Link>
             </li>
           ))}
         </ul>
 
-        {isLoggedIn ? (
+        {token !== null ? (
           <div className='hidden sm:block'>
             <Box position='relative'>
               <IconButton
@@ -123,7 +126,7 @@ const Navbar = () => {
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                   position='absolute'
                   top='10px'
-                // Adjust the right positioning as needed
+                  // Adjust the right positioning as needed
                 />
                 {/* Dropdown */}
                 <MenuList
@@ -153,7 +156,7 @@ const Navbar = () => {
         )}
 
         <div className='sm:hidden flex flex-1 justify-end items-center pr-7'>
-          {!isLoggedIn && (
+          {!token ? (
             <Button
               text='LOGIN'
               bgColor='#FF6D6D'
@@ -161,16 +164,19 @@ const Navbar = () => {
                 navigate('/signin');
               }}
             />
+          ) : (
+            <img
+              src={toggle ? close : menu}
+              alt='menu'
+              className='w-7 h-7 ml-3 object-contain cursor-pointer text-dark'
+              onClick={() => setToggle(!toggle)}
+            />
           )}
-          <img
-            src={toggle ? close : menu}
-            alt='menu'
-            className='w-7 h-7 ml-3 object-contain cursor-pointer text-dark'
-            onClick={() => setToggle(!toggle)}
-          />
+
           <div
-            className={`${!toggle ? 'hidden' : 'flex'
-              } p-6 bg-gray-50 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            className={`${
+              !toggle ? 'hidden' : 'flex'
+            } p-6 bg-gray-50 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <ul className='list-none flex justify-end items-start flex-col gap-4'>
               {navbarData.map((link) => (
@@ -199,7 +205,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </nav >
+    </nav>
   );
 };
 
