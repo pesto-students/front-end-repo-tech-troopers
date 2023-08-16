@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import {
   signupuser, signinuser, addngodetails, toggleresourcestatus, togglevolunteerstatus,
 } from './authActions';
@@ -13,14 +13,12 @@ const initialState = {
   registration: false, // for monitoring the registration process.
 };
 
-const userToken = localStorage.getItem('userToken')
-  ? localStorage.getItem('userToken')
-  : null;
-
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {},
+  reducers: {
+    resetStoreAuth: () => ({}),
+  },
   extraReducers: {
     [signupuser.pending]: (state) => {
       state.loading = true;
@@ -66,7 +64,6 @@ const authSlice = createSlice({
       state.error = payload;
     },
     [toggleresourcestatus.fulfilled]: (state, { payload }) => {
-      togglevolunteerstatus;
       state.loading = false;
 
       if (payload.action === 'APPROVE') {
@@ -108,5 +105,9 @@ const authSlice = createSlice({
     },
   },
 });
+
+export const {
+  resetStoreAuth,
+} = authSlice.actions;
 
 export default authSlice.reducer;

@@ -28,7 +28,7 @@ const VolunteerAdmin = ({ sendDataToParent }) => {
   const [modalContent, setModalContent] = useState([]);
   // async function onReadMoreClick() {
   useEffect(() => {
-    if (userInfo) dispatch(fetchvolunteersadmins({}));
+    if (userInfo) dispatch(fetchvolunteersadmins());
   }, []);
 
   const handleSearch = (query) => {

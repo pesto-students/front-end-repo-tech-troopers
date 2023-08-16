@@ -4,20 +4,19 @@ import axiosHelper from '../../axiosHelper';
 const CONFIG = {
   headers: {
     'Content-Type': 'application/json',
-    'x-auth-token': `${localStorage.getItem('userToken')}`
+    'x-auth-token': `${localStorage.getItem('userToken')}`,
   },
 };
 
 export const fetchvolunteersadmins = createAsyncThunk(
   'volunteer/',
-  async ({ }, { rejectWithValue }) => {
+  async (_, { rejectWithValue }) => {
     try {
-
       const data = await axiosHelper.get(
         '/voluntary/admin',
         {
         },
-        {}
+        {},
       );
       return data;
     } catch (error) {
@@ -27,7 +26,7 @@ export const fetchvolunteersadmins = createAsyncThunk(
 );
 export const fetchvolunteersuser = createAsyncThunk(
   'volunteer/uservolunteers', // Provide a unique action name
-  async ({ search, filter }, { rejectWithValue }) => { // You're not using the first parameter, so use "_"
+  async ({ search, filter }, { rejectWithValue }) => {
     try {
       // Modify queryParams if needed
       const queryParams = {};
@@ -53,4 +52,3 @@ export const fetchvolunteersuser = createAsyncThunk(
     }
   },
 );
-

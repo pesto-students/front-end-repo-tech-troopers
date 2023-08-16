@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 const useAxios = () => {
@@ -46,7 +46,7 @@ const useAxios = () => {
   };
 
   return {
-    data, loading, error, fetchData, postData, patchData, deleteData, putData
+    data, loading, error, fetchData, postData, patchData, deleteData, putData,
   };
 };
 

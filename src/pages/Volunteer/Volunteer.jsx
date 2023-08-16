@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
@@ -34,10 +34,12 @@ import ModalComponent from '../../components/commons/Modal';
 import LoadingOverlay from '../../components/loader/Loader';
 import AlertDialog from '../../components/alerDialog/alertDialog';
 import axiosHelper from '../../axiosHelper';
+import { fetchvolunteersadmins } from '../../redux/features/volunteerActions';
 import useAxios from '../../hooks/useAxios';
 import volunteerSchema from '../../validations/volunteer.validation';
 
 const Volunteer = () => {
+  const dispatch = useDispatch();
   const [ageRange, setAgeRange] = useState([18, 40]);
   const [volunteerData, setVolunteerData] = useState(null);
   const [isAlertOpen, setAlertOpen] = useState(false);
@@ -77,7 +79,9 @@ const Volunteer = () => {
       setAlertOpen(true);
     } else {
       handleCloseModal();
-      navigate('/volunteer');
+      dispatch(
+        fetchvolunteersadmins()
+      );
     }
   }, [error, data]);
   const onSubmit = handleSubmit(async (data) => {
