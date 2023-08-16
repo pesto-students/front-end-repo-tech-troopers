@@ -28,13 +28,13 @@ function DonateCards({ openModal }) {
   }, []);
 
   return (
-    <section className="relative p-10 w-full bg-gray-50">
+    <section className='relative pt-8 pb-24 px-12 w-full bg-gray-50'>
       {loading ? (
-        <div className="flex items-center justify-center mt-10">
+        <div className='flex items-center justify-center mt-10'>
           <SpinnerCircular color={'#FF6D6D'} size={100} />
         </div>
       ) : (
-        <div className="flex items-center flex-wrap justify-around space-y-5">
+        <div className='flex items-center flex-wrap justify-around space-y-5'>
           {data?.causeList?.map((card) => (
             <DonateCard {...card} key={card._id} />
           ))}
@@ -43,41 +43,41 @@ function DonateCards({ openModal }) {
       {role !== 'USER' && data ? (
         <div
           onClick={openModal}
-          className="absolute w-full bottom-10 left-[90%] cursor-pointer"
+          className='absolute w-full bottom-5 left-[90%] cursor-pointer'
         >
-          <span className="p-4 bg-primary h-16 w-16 rounded-full text-white text-3xl font-extrabold flex items-center justify-center">
+          <span className='p-4 bg-primary h-16 w-16 rounded-full text-white text-3xl font-extrabold flex items-center justify-center'>
             +
           </span>
         </div>
       ) : null}
 
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeModal}>
-          <div className="fixed inset-0 bg-primary/25" />
+        <Dialog as='div' className='relative z-10' onClose={closeModal}>
+          <div className='fixed inset-0 bg-primary/25' />
           <Transition.Child
             as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
+            enter='ease-out duration-300'
+            enterFrom='opacity-0'
+            enterTo='opacity-100'
+            leave='ease-in duration-200'
+            leaveFrom='opacity-100'
+            leaveTo='opacity-0'
           >
-            <div className="fixed inset-0 bg-primary bg-opacity-25" />
+            <div className='fixed inset-0 bg-primary bg-opacity-25' />
           </Transition.Child>
 
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-[110vh] items-center justify-center p-4 text-center z-50">
+          <div className='fixed inset-0 overflow-y-auto'>
+            <div className='flex min-h-[110vh] items-center justify-center p-4 text-center z-50'>
               <Transition.Child
                 as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
+                enter='ease-out duration-300'
+                enterFrom='opacity-0 scale-95'
+                enterTo='opacity-100 scale-100'
+                leave='ease-in duration-200'
+                leaveFrom='opacity-100 scale-100'
+                leaveTo='opacity-0 scale-95'
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-gray-50 p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className='w-full max-w-md transform overflow-hidden rounded-2xl bg-gray-50 p-6 text-left align-middle shadow-xl transition-all'>
                   <AddCause closeModal={closeModal} />
                 </Dialog.Panel>
               </Transition.Child>
