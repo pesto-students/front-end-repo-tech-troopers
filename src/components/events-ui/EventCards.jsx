@@ -45,15 +45,14 @@ function EventCards() {
     fetchData('event');
   }, []);
 
-
   return (
-    <section className="p-10 w-full bg-white">
+    <section className='p-10 w-full bg-white'>
       {loading ? (
-        <div className="flex items-center justify-center mt-10">
+        <div className='flex items-center justify-center mt-10'>
           <SpinnerCircular color={'#FF6D6D'} size={100} />
         </div>
       ) : (
-        <div className="flex items-center flex-wrap justify-evenly space-y-5">
+        <div className='flex items-center flex-wrap justify-evenly space-y-5'>
           {data?.eventList?.map((card) => (
             <EventCard {...card} key={card._id} />
           ))}
