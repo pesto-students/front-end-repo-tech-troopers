@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Button from '../ui/Button/Button';
 import logoIcon from '../../assets/icon_brighterdays.svg';
 import menu from '../../assets/hamburger-black.svg';
@@ -7,6 +7,11 @@ import close from '../../assets/close-black.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { ChevronUpIcon } from '@chakra-ui/icons';
+import { resetStoreAuth } from '../../redux/features/authSlice';
+import { resetStore } from '../../redux/features/volunteerSlice';
+import { resetStoreResources } from '../../redux/features/resourcesSlice';
+import { resetStoreNgo } from '../../redux/features/ngoSlice';
+import { resetStoreDonate } from '../../redux/features/donateSlice';
 import {
   IconButton,
   Menu,
@@ -49,20 +54,28 @@ const navbarData = [
   },
 ];
 
+
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(true);
 
   const navigate = useNavigate();
   const { isLoggedIn } = useSelector((state) => state.auth);
+  const clearStores = () => {
+    dispatch(resetStoreAuth);
+    dispatch(resetStore);
+    dispatch(resetStoreResources);
+    dispatch(resetStoreNgo);
+    dispatch(resetStoreDonate);
+  }
 
   const token = localStorage.getItem('userToken');
   console.log({ token });
 
   const handleLogout = () => {
+    clearStores();
     localStorage.clear();
     navigate('/signin');
-    window.location.reload();
   };
   return (
     <nav className='w-full flex items-center py-5 fixed top-0 z-20 bg-white shadow-md h-20'>
@@ -87,7 +100,7 @@ const Navbar = () => {
             <li
               key={link.id}
               className='text-dark hover:text-primary text-lg font-medium cursor-pointer'
-              // onClick={() => setActive(link.title)}
+            // onClick={() => setActive(link.title)}
             >
               <Link to={link.path}>{link.title}</Link>
             </li>
@@ -126,7 +139,7 @@ const Navbar = () => {
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                   position='absolute'
                   top='10px'
-                  // Adjust the right positioning as needed
+                // Adjust the right positioning as needed
                 />
                 {/* Dropdown */}
                 <MenuList
@@ -174,9 +187,8 @@ const Navbar = () => {
           )}
 
           <div
-            className={`${
-              !toggle ? 'hidden' : 'flex'
-            } p-6 bg-gray-50 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            className={`${!toggle ? 'hidden' : 'flex'
+              } p-6 bg-gray-50 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <ul className='list-none flex justify-end items-start flex-col gap-4'>
               {navbarData.map((link) => (

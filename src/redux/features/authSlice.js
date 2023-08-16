@@ -20,7 +20,9 @@ const userToken = localStorage.getItem('userToken')
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {},
+  reducers: {
+    resetStoreAuth: () => (initialState),
+  },
   extraReducers: {
     [signupuser.pending]: (state) => {
       state.loading = true;
@@ -108,5 +110,9 @@ const authSlice = createSlice({
     },
   },
 });
+
+export const {
+  resetStoreAuth,
+} = authSlice.actions;
 
 export default authSlice.reducer;

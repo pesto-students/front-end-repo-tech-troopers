@@ -11,6 +11,7 @@ const volunteeringSlice = createSlice({
   name: 'volunteers',
   initialState,
   reducers: {
+    resetStore: () => (initialState),
     deleteVolunteer(state, action) {
       const volunteerId = action.payload;
       state.volunteers = state.volunteers.filter((volunteer) => volunteer._id !== volunteerId);
@@ -61,6 +62,7 @@ export const {
   fetchVolunteeringOppurtunitiesSuceess,
   fetchVolunteeringOppurtunitiesFailure,
   deleteVolunteer,
+  resetStore,
 } = volunteeringSlice.actions;
 
 export default volunteeringSlice.reducer;

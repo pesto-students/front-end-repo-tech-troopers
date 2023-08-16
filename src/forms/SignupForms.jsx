@@ -89,9 +89,9 @@ const SignUpForm = ({ onSubmitStep1, errors, register, isSubmitting }) => {
           {/* Add options for the Select dropdown here */}
           <option value='NGO_USER'>NGO Admin</option>
           <option value='USER'>User</option>
-        </Select>
+        </Select >
         <FormErrorMessage>{errors.role?.message}</FormErrorMessage>
-      </FormControl>
+      </FormControl >
       <VStack spacing={4}>
         <FormControl
           id='password'
@@ -144,7 +144,7 @@ const SignUpForm = ({ onSubmitStep1, errors, register, isSubmitting }) => {
           SIGN UP
         </Button>
       </VStack>
-    </form>
+    </form >
   );
 };
 

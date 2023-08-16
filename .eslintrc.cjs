@@ -22,5 +22,8 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'no-underscore-dangle': 'off',
+    'global-require': 'off',
+    'no-param-reassign': ['error', { props: false }],
   },
 };

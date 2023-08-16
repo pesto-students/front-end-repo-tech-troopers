@@ -7,13 +7,8 @@ const axiosInstance = axios.create({
 
 // Optional: You can add an interceptor for handling response errors globally.
 axiosInstance.interceptors.response.use(
-  (response) => {
-    return response.data; // Return only the response data to the caller
-  },
-  (error) => {
-    // Handle common error cases, e.g., authentication errors, network errors, etc.
-    return Promise.reject(error);
-  }
+  (response) => response.data, // Return only the response data to the caller
+  (error) => Promise.reject(error),
 );
 
 // Set the authentication token before making a request
@@ -25,9 +20,7 @@ axiosInstance.interceptors.request.use(
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error),
 );
 
 export default axiosInstance;

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -30,8 +30,10 @@ import ResourcesAdmin from './ResourcesAdmin';
 import ResourcesUser from './ResourcesUser';
 import useAxios from '../../hooks/useAxios';
 import resoucesSchema from '../../validations/resources.validation';
+import { fetchresourcesuser } from '../../redux/features/resourcesAction';
 
 const Resources = () => {
+  const dispatch = useDispatch();
   const { role, _id } = useSelector((state) => state.auth.userInfo);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [resourceData, setResourceData] = useState(null);
@@ -78,6 +80,7 @@ const Resources = () => {
       setError(error);
       setAlertOpen(true);
     } else {
+      if (_id) dispatch(fetchresourcesuser({ userId: _id }));
       handleCloseModal();
       navigate('/resources');
     }

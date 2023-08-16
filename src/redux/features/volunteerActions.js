@@ -4,20 +4,19 @@ import axiosHelper from '../../axiosHelper';
 const CONFIG = {
   headers: {
     'Content-Type': 'application/json',
-    'x-auth-token': `${localStorage.getItem('userToken')}`
+    'x-auth-token': `${localStorage.getItem('userToken')}`,
   },
 };
 
 export const fetchvolunteersadmins = createAsyncThunk(
   'volunteer/',
-  async ({ }, { rejectWithValue }) => {
+  async (_, { rejectWithValue }) => {
     try {
-
       const data = await axiosHelper.get(
         '/voluntary/admin',
         {
         },
-        {}
+        {},
       );
       return data;
     } catch (error) {
@@ -53,4 +52,3 @@ export const fetchvolunteersuser = createAsyncThunk(
     }
   },
 );
-

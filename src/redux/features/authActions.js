@@ -9,7 +9,9 @@ const CONFIG = {
 
 export const signupuser = createAsyncThunk(
   'auth/signup',
-  async ({ name, email, role, password }, { rejectWithValue }) => {
+  async ({
+    name, email, role, password,
+  }, { rejectWithValue }) => {
     try {
       const data = await axiosHelper.post(
         '/users',
@@ -19,7 +21,7 @@ export const signupuser = createAsyncThunk(
           password,
           role,
         },
-        CONFIG
+        CONFIG,
       );
       localStorage.removeItem('userToken');
       localStorage.setItem('userToken', data.token);
@@ -28,11 +30,10 @@ export const signupuser = createAsyncThunk(
     } catch (error) {
       if (error.response && error.response.data.message) {
         return rejectWithValue(error.response.data.message);
-      } else {
-        return rejectWithValue(error.message);
       }
+      return rejectWithValue(error.message);
     }
-  }
+  },
 );
 
 export const signinuser = createAsyncThunk(
@@ -45,7 +46,7 @@ export const signinuser = createAsyncThunk(
           email,
           password,
         },
-        CONFIG
+        CONFIG,
       );
       localStorage.removeItem('userToken');
       localStorage.setItem('userToken', data.token);
@@ -54,11 +55,10 @@ export const signinuser = createAsyncThunk(
     } catch (error) {
       if (error.response && error.response.data.message) {
         return rejectWithValue(error.response.data.message);
-      } else {
-        return rejectWithValue(error.message);
       }
+      return rejectWithValue(error.message);
     }
-  }
+  },
 );
 
 export const addngodetails = createAsyncThunk(
@@ -71,20 +71,16 @@ export const addngodetails = createAsyncThunk(
           address,
           ngoDetails,
         },
-        CONFIG
+        CONFIG,
       );
-      localStorage.removeItem('userToken');
-      localStorage.setItem('userToken', data.token);
-      localStorage.setItem('userRole', data?.userInfo.role);
       return data;
     } catch (error) {
       if (error.response && error.response.data.message) {
         return rejectWithValue(error.response.data.message);
-      } else {
-        return rejectWithValue(error.message);
       }
+      return rejectWithValue(error.message);
     }
-  }
+  },
 );
 
 export const toggleresourcestatus = createAsyncThunk(
@@ -96,17 +92,16 @@ export const toggleresourcestatus = createAsyncThunk(
         {
           action,
         },
-        CONFIG
+        CONFIG,
       );
       return { resourceID, action };
     } catch (error) {
       if (error.response && error.response.data.message) {
         return rejectWithValue(error.response.data.message);
-      } else {
-        return rejectWithValue(error.message);
       }
+      return rejectWithValue(error.message);
     }
-  }
+  },
 );
 
 export const togglevolunteerstatus = createAsyncThunk(
@@ -116,15 +111,14 @@ export const togglevolunteerstatus = createAsyncThunk(
       await axiosHelper.patch(
         `/voluntary/${action}/${volunteerId}`,
         {},
-        CONFIG
+        CONFIG,
       );
       return { volunteerId, action };
     } catch (error) {
       if (error.response && error.response.data.message) {
         return rejectWithValue(error.response.data.message);
-      } else {
-        return rejectWithValue(error.message);
       }
+      return rejectWithValue(error.message);
     }
-  }
+  },
 );
