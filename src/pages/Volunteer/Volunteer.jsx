@@ -217,7 +217,7 @@ const Volunteer = () => {
         onClose={() => {
           setAlertOpen(false);
         }}
-        errorMessage={error || ''}
+        errorMessage={error?.message || 'Error occured'}
       />
       <div className='bg-[#ECF1F0]'>
         <Navbar />

@@ -55,7 +55,7 @@ const ResourcesUser = ({ sendDataToParent, handleOpenModal }) => {
         onClose={() => {
           setAlertOpen(false);
         }}
-        errorMessage={error || ''}
+        errorMessage={error?.message || 'Error occured'}
       />
       <div className='bg-lightg flex flex-col items-center justify-center'>
         {resources.map((resource) => (
