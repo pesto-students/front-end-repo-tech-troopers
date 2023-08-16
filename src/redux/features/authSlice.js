@@ -17,7 +17,7 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    resetStoreAuth: () => ({}),
+    resetStoreAuth: () => (initialState),
   },
   extraReducers: {
     [signupuser.pending]: (state) => {
