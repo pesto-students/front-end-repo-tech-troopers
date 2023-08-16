@@ -13,16 +13,24 @@ export default {
       backgroundImage: {
         resources:
           "url('https://res.cloudinary.com/dtbt6but5/image/upload/b_rgb:171616,co_rgb:000000,e_auto_brightness,o_54/v1691322098/Brighter%20Days/Photo_rcujqq.png')",
-        'hero-pattern': "url('/src/assets/background_home.png')",
-        'resource-pattern': "url('/src/assets/resource_background.png')",
-        'message-pattern': "url('/src/assets/message_background.png')",
-        'donate-pattern': "url('/src/assets/donate_background.png')",
-        'events-pattern': "url('/src/assets/background_events.png')",
-        'about-pattern': "url('/src/assets/aboutus_background.jpg')",
-        'donatesingle-pattern': "url('/src/assets/donate_single.png')",
-        'volunteer-pattern': "url('/src/assets/volunteer_background.png')",
+        'hero-pattern':
+          "url('https://res.cloudinary.com/dhuaafpob/image/upload/v1692185604/background_home_p4oyvo.png')",
+        'resource-pattern':
+          "url('https://res.cloudinary.com/dhuaafpob/image/upload/v1692186531/resource_background_iomfnl.png')",
+        'message-pattern':
+          "url('https://res.cloudinary.com/dhuaafpob/image/upload/v1692187176/message_background_nbkc1z.png')",
+        'donate-pattern':
+          "url('https://res.cloudinary.com/dhuaafpob/image/upload/v1692186121/donate_background_va4rag.png')",
+        'events-pattern':
+          "url('https://res.cloudinary.com/dhuaafpob/image/upload/v1692185814/background_events_cgf3in.png')",
+        'about-pattern':
+          "url('https://res.cloudinary.com/dhuaafpob/image/upload/v1692185813/aboutus_background_wcoske.jpg')",
+        'donatesingle-pattern':
+          "url('https://res.cloudinary.com/dhuaafpob/image/upload/v1692187221/donate_single_aymey8.png')",
+        'volunteer-pattern':
+          "url('https://res.cloudinary.com/dhuaafpob/image/upload/v1692185816/volunteersingle_background_jiz2xo.png')",
         'volunteersingle-pattern':
-          "url('/src/assets/volunteersingle_background.png')",
+          "url('https://res.cloudinary.com/dhuaafpob/image/upload/v1692185815/volunteer_background_cs3eg5.png')",
         placeholder:
           "url('https://asset.cloudinary.com/dtbt6but5/482ae0152f27d44b5105d3232e379671')",
       },
