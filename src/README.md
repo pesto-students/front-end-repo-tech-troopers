@@ -26,12 +26,12 @@ Please Note:
 <br/>
 Test Credentials:
 
-- For USer
+- For User
   - Email: akshayurankar48@gmail.com
-  - Password: 123456
+  - Password: Qwerty@123
 - For NGO User
-  - Emai: test@gmail.com
-  - Password:123456
+  - Emai: admin@gmail.com
+  - Password:Qwerty@123
 
 <br/>
 
@@ -47,6 +47,7 @@ Test Credentials:
 
 We tried to use a completely modern tech stack while testing out some new technologies that we had never used before. This resulted in a fast, performant, and easily-extensible web app that should be fairly future-proof for the coming next several years. We used:
 
+- [ReactJS](https://react.dev/)
 - [Chakra UI](https://chakra-ui.com/)
 - [Redux toolkit](https://redux-toolkit.js.org/)
 - [Lodash](https://lodash.com/)
