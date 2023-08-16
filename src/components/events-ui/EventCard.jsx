@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 // import Button from '../ui/Button/Button';
 // import Education from '../../assets/events_education.png';
 import getDayAndMonth from '../../utils/getDayAndMonth';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const EventCard = ({ imageURL, date, _id, title, description, ngoName }) => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const EventCard = ({ imageURL, date, _id, title, description, ngoName }) => {
       onClick={handleEventClick}
     >
       <div className='w-[500px] h-[300px] '>
-        <img src={imageURL} className='object-cover' alt='' />
+        <LazyLoadImage src={imageURL} className='object-cover' alt='' />
         <h3 className='absolute w-[116px] top-0 left-0 bg-primary text-white font-shippori text-center text-5xl px-4 py-5 z-10'>
           {day} <span className='text-white text-4xl'>{month}</span>
         </h3>

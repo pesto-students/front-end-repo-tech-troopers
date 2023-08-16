@@ -8,6 +8,12 @@ import Button from '../ui/Button/Button';
 import CauseCard from './CauseCard';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { useEffect } from 'react';
+import useAxios from '../../hooks/useAxios';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import React from 'react';
+import Slider from 'react-slick';
 
 const cardDummyData = [
   {
@@ -44,48 +50,54 @@ const cardDummyData = [
   },
 ];
 
+let settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+};
+
 function OurCauses() {
+  const { data, loading, error, fetchData } = useAxios();
   const navigate = useNavigate();
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
+
+  useEffect(() => {
+    fetchData('cause');
+  }, []);
+
+  const handleClick = (_id) => {
+    navigate(`/donate/${_id}`);
   };
 
   return (
-    <section className="container m-4 md:mt-36 mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex items-center justify-between mb-4">
+    <section className='container m-4 md:mt-36 mx-auto px-4 sm:px-6 lg:px-8'>
+      <div className='flex items-center justify-between mb-4'>
         <SectionHeading
           heading='Our Causes'
           title='You can help lots of people by donating little.'
         />
-        <Button text='MORE CAUSES' bgColor='primary' onClick={() => { navigate('/donate') }} />
+        <Button
+          text='MORE CAUSES'
+          bgColor='primary'
+          onClick={() => {
+            navigate('/donate');
+          }}
+        />
       </div>
 
       {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10"> */}
-      <Carousel responsive={responsive}>
-        {cardDummyData.map((card) => (
-          <div key={card.id} className='flex'>
-            <CauseCard {...card} key={card.id} />
+      {/* <Carousel responsive={responsive}> */}
+      <Slider {...settings}>
+        {data?.causeList?.map((card) => (
+          <div key={card.id} className='flex cursor-pointer '>
+            <CauseCard onClick={handleClick} {...card} key={card._id} />
           </div>
         ))}
-      </Carousel>
+      </Slider>
+      {/* </Carousel> */}
       {/* </div> */}
-    </section >
+    </section>
   );
 }
 

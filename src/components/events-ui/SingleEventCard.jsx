@@ -57,12 +57,12 @@ const SingleEventCard = ({ description, title, imageURL, _id }) => {
         </div>
 
         {/* Event Description */}
-        <div className='max-w-xl'>
+        {/* <div className='max-w-xl'>
           <h3 className='pt-12 pb-3 text-3xl font-shippori font-extrabold '>
             Details about the Event{' '}
           </h3>
           <p className='text-gray-dark text-xl font-normal'>{description}</p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

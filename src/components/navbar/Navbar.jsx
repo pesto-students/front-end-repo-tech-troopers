@@ -56,6 +56,7 @@ const navbarData = [
 
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   const [toggle, setToggle] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(true);
 
@@ -73,6 +74,7 @@ const Navbar = () => {
   console.log({ token });
 
   const handleLogout = () => {
+    localStorage.clear();
     clearStores();
     localStorage.clear();
     navigate('/signin');

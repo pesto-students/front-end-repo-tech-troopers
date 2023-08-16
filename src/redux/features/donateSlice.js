@@ -25,6 +25,10 @@ const donationSlice = createSlice({
 });
 
 // donationSlice.js
-export const { fetchDonationsSuccess, fetchDonationsFailure, resetStoreDonate } = donationSlice.actions;
+export const {
+  fetchDonationsSuccess,
+  fetchDonationsFailure,
+  resetStoreDonate,
+} = donationSlice.actions;
 
 export default donationSlice.reducer;

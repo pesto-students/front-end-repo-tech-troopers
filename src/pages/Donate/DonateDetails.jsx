@@ -7,15 +7,19 @@ import Footer from '../../components/commons/Footer';
 import useAxios from '../../hooks/useAxios';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 const DonateDetails = () => {
   const { data, loading, error, fetchData } = useAxios();
 
+  const { id } = useParams();
+
   useEffect(() => {
-    fetchData('cause');
+    fetchData(`cause/${id}`);
   }, []);
 
-  const detailsData = data?.causeList[0];
+  const detailsData = data?.causeData;
+  console.log({ data });
 
   return (
     <motion.div
@@ -29,6 +33,7 @@ const DonateDetails = () => {
         description={detailsData?.description}
         imageURL={detailsData?.imageURL}
         calculatedAmount={detailsData?.calculatedAmount}
+        name={detailsData?.name}
         amount={detailsData?.amount}
       />
       <BankDetails />

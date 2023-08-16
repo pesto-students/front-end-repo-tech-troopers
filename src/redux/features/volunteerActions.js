@@ -26,7 +26,7 @@ export const fetchvolunteersadmins = createAsyncThunk(
 );
 export const fetchvolunteersuser = createAsyncThunk(
   'volunteer/uservolunteers', // Provide a unique action name
-  async ({ search, filter }, { rejectWithValue }) => { // You're not using the first parameter, so use "_"
+  async ({ search, filter }, { rejectWithValue }) => {
     try {
       // Modify queryParams if needed
       const queryParams = {};
