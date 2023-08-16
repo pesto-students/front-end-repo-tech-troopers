@@ -75,12 +75,12 @@ const SignUp = () => {
       />
       <div className='relative h-screen bg-gray-50'>
         {/* Background Image */}
-        <div className='background-image absolute inset-0 bg-cover bg-center'></div>
+        <div className='background-image absolute inset-0 bg-cover  bg-center'></div>
         {/* White Background */}
         <div className='white-background absolute inset-0'></div>
 
         {/* Card Overlay */}
-        <div className='absolute inset-0 flex flex-col gap-5 justify-center items-center w-full lg:w-30'>
+        <div className='absolute inset-0 flex flex-col  justify-center items-center w-[80%] lg:w-30'>
           <div className='text-[4rem] leading-[108.3%] font-ellen text-white sm:text-[4rem] md:text-[10rem] lg:text-[8rem] '>
             <p className='mb-8'>Brighter Days</p>
           </div>
@@ -89,7 +89,7 @@ const SignUp = () => {
             style={{ backgroundColor: '#f1eeec', padding: '2rem' }}
           >
             <CardHeader>
-              <div className='relative leading-[120%] font-extrabold font-shippori text-[2.19rem]'>
+              <div className='relative leading-[120%] font-extrabold font-shippori text-3xl'>
                 Sign Up
               </div>
             </CardHeader>
@@ -103,8 +103,8 @@ const SignUp = () => {
               ></SignUpForm>
             </CardBody>
             <div
-              className="relative leading-[130%] inline-block w-[20rem] cursor-pointer font-ellen text-[2rem]"
-              onClick={() => { }}
+              className='relative leading-[130%] inline-block w-[20rem] cursor-pointer font-ellen text-[2rem]'
+              onClick={() => {}}
             >
               <span>Already have an account?</span>
               <span className='text-primary'>
