@@ -11,6 +11,8 @@ const resourcesSlice = createSlice({
   name: 'resources',
   initialState,
   reducers: {
+    resetStoreResources: () => (initialState),
+
     deleteResource(state, action) {
       const resourceId = action.payload;
       state.resources = state.resources.filter((resource) => resource._id !== resourceId);
@@ -62,6 +64,7 @@ export const {
   fetchResourcesSuccess,
   fetchResourcesStart,
   deleteResource,
+  resetStoreResources,
 } = resourcesSlice.actions;
 
 export default resourcesSlice.reducer;

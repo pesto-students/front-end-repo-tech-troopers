@@ -13,6 +13,7 @@ const ngoListSlice = createSlice({
   name: 'ngoList',
   initialState,
   reducers: {
+    resetStoreNgo: () => (initialState),
     setLoading(state) {
       state.loading = true;
     },
@@ -29,6 +30,8 @@ const ngoListSlice = createSlice({
 });
 
 // ngoListSlice.js
-export const { setLoading, fetchNgoListSuccess, fetchNgoListFailure } = ngoListSlice.actions;
+export const {
+  setLoading, fetchNgoListSuccess, fetchNgoListFailure, resetStoreNgo,
+} = ngoListSlice.actions;
 
 export default ngoListSlice.reducer;

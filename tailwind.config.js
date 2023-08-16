@@ -1,3 +1,4 @@
+// eslint-disable-line global-require
 /** @type {import('tailwindcss').Config} */
 
 export default {

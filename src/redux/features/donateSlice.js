@@ -11,6 +11,7 @@ const donationSlice = createSlice({
   name: 'donation',
   initialState,
   reducers: {
+    resetStoreDonate: () => (initialState),
     fetchDonationsSuccess(state, action) {
       state.donations = action.payload;
       state.loading = false;
@@ -24,6 +25,10 @@ const donationSlice = createSlice({
 });
 
 // donationSlice.js
-export const { fetchDonationsSuccess, fetchDonationsFailure } = donationSlice.actions;
+export const {
+  fetchDonationsSuccess,
+  fetchDonationsFailure,
+  resetStoreDonate,
+} = donationSlice.actions;
 
 export default donationSlice.reducer;
