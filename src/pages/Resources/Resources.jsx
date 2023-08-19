@@ -77,7 +77,7 @@ const Resources = () => {
   }, [resourceData, setValue]);
   useEffect(() => {
     if (error) {
-      setError(error);
+      setError(error?.message || 'Error Occured');
       setAlertOpen(true);
     } else {
       if (_id) dispatch(fetchresourcesuser({ userId: _id }));
